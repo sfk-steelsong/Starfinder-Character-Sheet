@@ -1,10 +1,10 @@
 @font-face{
     font-family:Aldrich;
-    src:local('Aldrich'),url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Aldrich-Regular.ttf);
+    src:local('Aldrich'),url(https://sfk-steelsong.github.io/Starfinder-Character-Sheet/Starfinder%20Sheet%20Fonts/Aldrich-Regular.ttf);
 }
 @font-face{
     font-family:Exo2;
-    src:local('Exo2'),url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Exo2-Light.ttf);
+    src:local('Exo2'),url(https://sfk-steelsong.github.io/Starfinder-Character-Sheet/Starfinder%20Sheet%20Fonts/Exo2-Light.ttf);
 }
 * {
     font-family:Exo2,Monospace;
@@ -106,7 +106,7 @@ button[type=roll] {
     position:absolute;
     top:-17px;
     left:-1px;
-    background-image:url('https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/533e5c9f/Selected%20Starfinder%20Header.png');
+    background-image:url('https://sfk-steelsong.github.io/Starfinder-Character-Sheet/Selected%20Starfinder%20Header.png');
     background-repeat: no-repeat;
     background-size:140px;
     color:white;
@@ -220,7 +220,7 @@ input[type=radio].sheet-in-play-tab.sheet-buff-tab:checked ~ .sheet-buffs{
 .sheet-menu-head,
 .sheet-char-details,
 .sheet-class-details{
-    background-image:url('https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/533e5c9f/UnSelected%20Starfinder%20Header.png');
+    background-image:url('https://sfk-steelsong.github.io/Starfinder-Character-Sheet/UnSelected%20Starfinder%20Header.png');
     z-index:1;
     top:-10px!important;
     
@@ -235,7 +235,7 @@ input[type=radio].sheet-in-play-tab.sheet-buff-tab:checked ~ .sheet-buffs{
 .sheet-section-container {
     border:0px solid transparent;
     border-radius:0px 15px 15px;
-    /*border-image:url('https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/bed46a76/border.png') 35% stretch;*/
+    /*border-image:url('https://sfk-steelsong.github.io/Starfinder-Character-Sheet/border.png') 35% stretch;*/
     box-shadow:0px 0px 5px #550aa2,0px 0px 20px #0a4ba1;
     margin-top:5px;
     padding:5px 0px;
@@ -286,7 +286,7 @@ input[type=radio].sheet-in-play-tab.sheet-buff-tab:checked ~ .sheet-buffs{
 }
 input[type=radio].sheet-in-play-tab:checked + h1,
 input[type=radio].sheet-char-tab:checked + h1 {
-    background-image:url('https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/533e5c9f/Selected%20Starfinder%20Header.png');
+    background-image:url('https://sfk-steelsong.github.io/Starfinder-Character-Sheet/Selected%20Starfinder%20Header.png');
     z-index:2;
 }
 .sheet-description {
@@ -456,7 +456,7 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
     justify-content:space-between !important;
 }
 .sheet-initiative-container button{
-    background-image:url('https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/533e5c9f/Selected%20Starfinder%20Header.png')!important;
+    background-image:url('https://sfk-steelsong.github.io/Starfinder-Character-Sheet/Selected%20Starfinder%20Header.png')!important;
     position:relative!important;
     left:0px;
     top:0px;
