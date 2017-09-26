@@ -389,7 +389,7 @@
                         <span class='health-label label stamina' data-i18n='sp'>SP</span>
                         <span class='health-label label hp' data-i18n='hp'>HP</span>
                         <span class='health-label label resolve' data-i18n='rp'>RP</span>
-                        <span class='health-label label temp' data-i18n='temp-hp'>TEMP</span>
+                        <span class='health-label label temp' data-i18n='temp-hp'>TMP</span>
                         <input class='current stamina' type='number' name='attr_sp' value='0' title=@{sp}>
                         <span class='slash stamina'>/</span>
                         <div class='attr-total-container'>
@@ -872,30 +872,32 @@
                             <option value='charisma_mod'>CHA</option>
                         </select>
                     </div>
-                    <div class='profession-placeholder' data-i18n='profession_placeholder'>ADD PROFESSIONS HERE</div>
-                    <fieldset class='repeating_profession'>
-                        <div class='skill-container'>
-                            <button type='roll' name='roll_profession' value='/w @{character_name} &{template:default} {{Profession @{profession_name}=[[1d20+@{Profession}]]}} {{@{character_name}}}' data-i18n='profession' title='%{repeating_profession_$X_profession_roll}'>PROFESSION</button>
-                            <input class='prof-name' type='text' name='attr_profession_name' placeholder='artist'>
-                            <input class='mod-debuff' type='radio' name='attr_profession_change' value='-1' hidden='true'>
-                            <input class='mod-normal' type='radio' name='attr_profession_change' value='0' hidden='true' checked='checked'>
-                            <input class='mod-buff' type='radio' name='attr_profession_change' value='1' hidden='true'>
-                            <span class='mod tot modified-attr' readonly='true' type='text' name='attr_profession' title='@{profession}' value='0'>0</span>
-                            <div class='arith'>=</div>
-                            <input class='ranks' type='number' name='attr_profession_ranks' value='' title='@{profession_ranks}'>
-                            <div class='arith'>+</div>
-                            <div class='class-skill'><input type='checkbox' name='attr_profession_class_skill' title='@{profession_class_skill}' value='3'><span class='cs'>3</span></div>
-                            <div class='arith'>+</div>
-                            <select class='label abi' name='attr_profession_ability' style='width; .5em;'>
-                                <option value='strength_mod'>STR</option>
-                                <option value='dexterity_mod'>DEX</option>
-                                <option value='constitution_mod'>CON</option>
-                                <option value='intelligence_mod' selected='selected'>INT</option>
-                                <option value='wisdom_mod'>WIS</option>
-                                <option value='charisma_mod'>CHA</option>
-                            </select>
-                        </div>
-                    </fieldset>
+                    <div class='skill-fieldset'>
+                        <div class='profession-placeholder' data-i18n='profession_placeholder'>ADD PROFESSIONS HERE</div>
+                        <fieldset class='repeating_profession'>
+                            <div class='skill-container'>
+                                <button type='roll' name='roll_profession' value='/w @{character_name} &{template:default} {{Profession @{profession_name}=[[1d20+@{Profession}]]}} {{@{character_name}}}' data-i18n='profession' title='%{repeating_profession_$X_profession_roll}'>PROFESSION</button>
+                                <input class='prof-name' type='text' name='attr_profession_name' placeholder='artist'>
+                                <input class='mod-debuff' type='radio' name='attr_profession_change' value='-1' hidden='true'>
+                                <input class='mod-normal' type='radio' name='attr_profession_change' value='0' hidden='true' checked='checked'>
+                                <input class='mod-buff' type='radio' name='attr_profession_change' value='1' hidden='true'>
+                                <span class='mod tot modified-attr' readonly='true' type='text' name='attr_profession' title='@{profession}' value='0'>0</span>
+                                <div class='arith'>=</div>
+                                <input class='ranks' type='number' name='attr_profession_ranks' value='' title='@{profession_ranks}'>
+                                <div class='arith'>+</div>
+                                <div class='class-skill'><input type='checkbox' name='attr_profession_class_skill' title='@{profession_class_skill}' value='3'><span class='cs'>3</span></div>
+                                <div class='arith'>+</div>
+                                <select class='label abi' name='attr_profession_ability' style='width; .5em;'>
+                                    <option value='strength_mod'>STR</option>
+                                    <option value='dexterity_mod'>DEX</option>
+                                    <option value='constitution_mod'>CON</option>
+                                    <option value='intelligence_mod' selected='selected'>INT</option>
+                                    <option value='wisdom_mod'>WIS</option>
+                                    <option value='charisma_mod'>CHA</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </div>
                     <div class='skill-container'>
                         <button type='roll' name='roll_sense_motive' value='/w @{character_name} &{template:default} {{Sense Motive=[[1d20+@{Sense_Motive}]]}} {{@{character_name}}}' data-i18n='sense_motive' title='%{sense_motive}'>SENSE MOTIVE</button>
                         <input class='mod-debuff' type='radio' name='attr_sense_motive_change' value='-1' hidden='true'>
@@ -1055,18 +1057,18 @@
                             </div>
                             <div class='display'>
                                 <button class='summary' type='roll' name='roll_atk' value='@{attack_macro}'>
-                                    <span class='atk-name-col' name='attr_attack_name' placeholder='Laser Pistol'>Laser Pistol</span>
+                                    <span class='label atk-name-col' name='attr_attack_name' placeholder='Laser Pistol'>Laser Pistol</span>
                                     <div class='attr-total-container'>
                                         <input class='mod-debuff' type='radio' name='attr_attack_total_change' value='-1' hidden='true'>
                                         <input class='mod-normal' type='radio' name='attr_attack_total_change' value='0' hidden='true' checked='checked'>
                                         <input class='mod-buff' type='radio' name='attr_attack_total_change' value='1' hidden='true'>
-                                        <span class='atk-mod-col modified-attr' name='attr_attack_total' value='0'>0</span>
+                                        <span class='label atk-mod-col modified-attr' name='attr_attack_total' value='0'>0</span>
                                     </div>
                                     <div class='attr-total-container'>
                                         <input class='mod-debuff' type='radio' name='attr_attack_dmg_total_change' value='-1' hidden='true'>
                                         <input class='mod-normal' type='radio' name='attr_attack_dmg_total_change' value='0' hidden='true' checked='checked'>
                                         <input class='mod-buff' type='radio' name='attr_attack_dmg_total_change' value='1' hidden='true'>
-                                        <span class='atk-dmg-col modified-attr' name='attr_attack_dmg_total' value='0'>0</span>
+                                        <span class='label atk-dmg-col modified-attr' name='attr_attack_dmg_total' value='0'>0</span>
                                     </div>
                                 </button>
                             </div>
@@ -1797,7 +1799,7 @@
     /*start starfinder.js*/
     var starfinder = starfinder || (function(){
         'use strict';
-        var version = 0.01,
+        var version = 0.011504653130,
             attributeAffected={
                 'eac':{
                     repeating:false,
@@ -1870,8 +1872,8 @@
                 'diplomacy':{
                     repeating:false,
                     total:'diplomacy',
-                    attrAdds:['diiplomacy_ranks','diiplomacy_class_skill'],
-                    ability:'diiplomacy_ability'
+                    attrAdds:['diplomacy_ranks','diplomacy_class_skill'],
+                    ability:'diplomacy_ability'
                 },
                 'engineering':{
                     repeating:false,
@@ -1901,7 +1903,7 @@
                     repeating:false,
                     total:'mysticism',
                     attrAdds:['mysticism_ranks','mysticism_class_skill'],
-                    ability:'_ability'
+                    ability:'mysticism_ability'
                 },
                 'perception':{
                     repeating:false,
@@ -1924,7 +1926,7 @@
                 'profession':{
                     repeating:'profession',
                     total:'profession',
-                    attrAdds:['profession_ranks','profession_class_skill'],
+                    repeatAdds:['profession_ranks','profession_class_skill'],
                     ability:'profession_ability'
                 },
                 'sense_motive':{
@@ -2416,6 +2418,12 @@
             var attribute = changed.replace(/_(?:drain|penalty|base)/,''),
                 setObj = {},
                 attrKeys = _.keys(attributes),
+                mainStats = _.reduce(attrKeys,(memo,k)=>{
+                    if(k.match(/class\-\d\-ability/) && attributes[k.replace(/ability/,'level')]*1>0){
+                        memo.push(attributes[k]);
+                    }
+                    return memo;
+                },[]),
                 sectionAttributes,IDs;
                 
             setObj[attribute]=(attributes[attribute+'_base']*1||10)-(attributes[attribute+'_drain']*1||0)+(bonus[attribute] ? (bonus[attribute].total) : 0);
@@ -2427,10 +2435,8 @@
                 setObj.sp_max = _.reduce([1,2,3,4,5],(memo,n)=>{
                     return memo + (attributes['class-'+n+'-sp']*attributes['class-'+n+'-level']||0)+(setObj['constitution_mod']*attributes['class-'+n+'-level']||0);
                 },0);
-                TAS.log(setObj.sp_max);
                 setObj.sp_max+=(bonus.sp ? (bonus.sp.total) : 0)+(bonus.sp_max ? (bonus.sp_max.total) : 0);
                 setObj.sp = Math.max(attributes.sp*1+(setObj.sp_max - attributes.sp_max*1),0);
-                TAS.log(setObj.sp);
             }
             if(setObj[attribute+'_mod']!==attributes[attribute+'_mod']*1){
                 setObj=_.reduce(attributeAffected,(memo,a)=>{
@@ -2445,18 +2451,37 @@
                             .unique()
                             .value();
                         _.each(IDs,(i)=>{
-                            if(attributes['repeating_'+a.repeating+'_'+i+'_'+a.ability]===attribute+'_mod'){
-                                memo['repeating_'+a.repeating+'_'+i+'_'+a.total]=_.reduce(a.repeatTextAdds,(memo,adds)=>{return memo + adds+'+'})+(memo[attribute+'_mod']+_.reduce(a.repeatAdds,(memo,adds)=>{return memo + (attributes['repeating_'+a.repeating+'_'+i+'_'+adds]*1||0)},0)+_.reduce(a.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0)+(a.numAdds||0)+(bonus[a.total] ? (bonus[a.total].total) : 0));
+                            TAS.log('attributes['+a.ability+']: '+attributes[a.ability]);
+                            TAS.log(JSON.stringify(a));
+                            if(attributes['repeating_'+a.repeating+'_'+i+'_'+a.ability]){
+                                if(attributes['repeating_'+a.repeating+'_'+i+'_'+a.ability].replace(/\+@{|}/g,'')===attribute+'_mod'){
+                                    TAS.log(JSON.stringify(a));
+                                    memo['repeating_'+a.repeating+'_'+i+'_'+a.total]=(a.repeatTextAdds ? _.reduce(a.repeatTextAdds,(m,adds)=>{
+                                        return m + attributes['repeating_'+a.repeating+'_'+i+'_'+adds]+'+';
+                                    },'') : 0)
+                                    +(memo[attribute+'_mod']+_.reduce(a.repeatAdds,(m,adds)=>{
+                                        return m + (attributes['repeating_'+a.repeating+'_'+i+'_'+adds]*1||0);
+                                    },0)+_.reduce(a.attrAdds,(m,adds)=>{
+                                        return m + (attributes[adds]*1||0);
+                                    },0)+(a.numAdds||0)+(bonus[a.total] ? (bonus[a.total].total) : 0));
+                                }
                             }
                         });
-                    }else if(attributes[a.ability]===attribute+'_mod'){
-                        memo[a.total]=memo[attribute+'_mod']+_.reduce(a.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0)+(a.numAdds||0)+(bonus[a.total] ? (bonus[a.total].total) : 0);
-                        if(a.total==='kac'){
-                            memo.cmd=memo.kac + 8;
+                    }else if(attributes[a.ability]){
+                        if(attributes[a.ability].replace(/\+@{|}/g,'')===attribute+'_mod'){
+                            memo[a.total]=memo[attribute+'_mod']+_.reduce(a.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0)+(a.numAdds||0)+(bonus[a.total] ? (bonus[a.total].total) : 0);
+                            if(a.total==='kac'){
+                                memo.cmd=memo.kac + 8;
+                            }
                         }
                     }
                     return memo;
                 },setObj);
+                //RP handling
+                setObj.rp_max=_.reduce(mainStats,(memo,s)=>{
+                    return Math.max(memo,Math.max(1,Math.max(Math.floor(attributes.level/2),1)+(setObj[s]||attributes[s])*1));
+                },1);
+                setObj.rp=(attributes.rp*1||0)+setObj.rp_max-(attributes.rp_max*1||0);
             }
             return setObj;
         },
@@ -2475,7 +2500,7 @@
             setObj[ac+'_armor']=bonus[ac+'_armor'].armor + bonus[ac+'_armor'].total;
             setObj[ac]=10+attributes[attributes[ac+'_ability']]*1+(setObj[ac+'_armor']*1||0)+(bonus[ac] ? (bonus[ac].total) : 0);
             if(ac==='kac'){
-                setObj.cmd=setObj[ac]+(bonus.cmd ? (bonus.cmd.total) : 0);
+                setObj.cmd=8+setObj[ac]+(bonus.cmd ? (bonus.cmd.total) : 0);
             }
             return setObj;
         },
@@ -2494,11 +2519,13 @@
         },
         
         skillHandler = function(attributes,bonus,changed,id){
-            var skill = changed.replace(/_(?:ranks|ability|class_skill)/,''),
+            var skill = changed.replace(/_(?:ranks|ability|class_skill|name)/,''),
                 setObj={},
-                repeatAdd=id ? 'repeating_profession_'+id+'_' : '';
+                repeatAdd=id ? 'repeating_profession_'+id+'_' : '',
+                bTotal = (bonus[skill] ? (bonus[skill].total) : 0) + (skill.match(/acrobatics|athletics|sleight/)&&bonus.acp ? bonus.acp.total : 0);
                 
-            setObj[repeatAdd+skill]=(attributes[repeatAdd+skill+'_ranks']*1||0)+(attributes[repeatAdd+skill+'_ranks']*1 > 0 ? (attributes[repeatAdd+skill+'_class_skill']*1||0) : 0)+(attributes[attributes[repeatAdd+skill+'_ability']]*1||0)+(bonus[skill] ? (bonus[skill].total) : 0) + (skill.match(/acrobatics|athletics|sleight/)&&bonus.acp ? bonus.acp.total : 0);
+            setObj[repeatAdd+skill]=(attributes[repeatAdd+skill+'_ranks']*1||0)+(attributes[repeatAdd+skill+'_ranks']*1 > 0 ? (attributes[repeatAdd+skill+'_class_skill']*1||0) : 0)+(attributes[attributes[repeatAdd+skill+'_ability']]*1||0)+bTotal;
+            setObj[repeatAdd+skill+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
             return setObj;
         },
         
@@ -2591,7 +2618,7 @@
                 setObj[ac]=10+attributes[attributes[ac+'_ability']]*1+(setObj[ac+'_armor']*1||0)+bTotal;
                 setObj[ac+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
             });
-            setObj.cmd=setObj.kac+(bonus.cmd ? (bonus.cmd.total) : 0);
+            setObj.cmd=8+setObj.kac+(bonus.cmd ? (bonus.cmd.total) : 0);
             setObj.cmd_change=(bonus.cmd ? ((bonus.cmd.total) > 0 ? 1 : ((bonus.cmd.total) < 0 ? -1 : 0)) : 0);
             //Save buffing
             _.each(['fort','ref','will'],(save)=>{
@@ -2602,8 +2629,8 @@
             //Skill buffing
             _.each(['acrobatics','athletics','bluff','computers','culture','diplomacy','disguise','engineering','intimidate','life_science','medicine','mysticism',
             'perception','physical_science','piloting','sense_motive','sleight_of_hand','stealth','survival'],(skill)=>{
-                bTotal = (bonus[skill] ? (bonus[skill].total) : 0);
-                setObj[skill]=(attributes[skill+'_ranks']*1||0)+(attributes[skill+'_ranks']*1 > 0 ? (attributes[skill+'_class_skill']*1||0) : 0)+(attributes[attributes[skill+'_ability']]*1||0)+bTotal + (skill.match(/acrobatics|athletics|sleight/)&&bonus.acp ? bonus.acp.total : 0);
+                bTotal = (bonus[skill] ? (bonus[skill].total) : 0)+(skill.match(/acrobatics|athletics|sleight/)&&bonus.acp ? bonus.acp.total : 0);
+                setObj[skill]=(attributes[skill+'_ranks']*1||0)+(attributes[skill+'_ranks']*1 > 0 ? (attributes[skill+'_class_skill']*1||0) : 0)+(attributes[attributes[skill+'_ability']]*1||0)+bTotal;
                 setObj[skill+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
             });
             sectionIDs = _.reduce(_.keys(attributes),(memo,k)=>{

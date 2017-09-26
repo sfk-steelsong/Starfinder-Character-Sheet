@@ -1,10 +1,19 @@
-* {
-    font-family:Arial;
+@font-face{
+    font-family:Aldrich;
+    src:url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Aldrich-Regular.ttf);
 }
-.sheet-section.sheet-label,
+@font-face{
+    font-family:Exo2;
+    src:url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Exo2-Light.ttf);
+}
+* {
+    font-family:Exo2,Monospace;
+}
 .sheet-tab-button + span,
-.sheet-initiative-container button{
-    font-family:Contrail One;
+.sheet-initiative-container button,
+.sheet-label,
+button {
+    font-family:Aldrich,Monospace;
     font-weight:400 !important;
 }
 input[hidden='true'] {
@@ -73,7 +82,7 @@ button[type=roll]:hover *,
 button[type=roll]:hover input[type=text],
 button[type=roll]:hover *
 {
-    color: #f86f1a !important;
+    color: #f86f1a;
 }
 .sheet-pc,
 .sheet-npc {
@@ -139,7 +148,7 @@ button[type=roll] {
     padding:5px;
 }
 .sheet-nav-label{
-    font-family:Contrail One !important;
+    font-family:Aldrich !important;
     font-size:12pt;
     font-weight:900;
     color:white;
@@ -426,8 +435,9 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
 }
 .sheet-page.sheet-core {
     grid-template-columns:[attribute-start skills-start initiative-start] 245px [attribute-end initiative-end] 20px [health-start] 5px [skills-end] 20px [weapons-start] 147px [health-end] 20px [armor-start] 93px [weapons-end] 20px [equipment-start] 68px [armor-end] 20px [saves-start] 182px [saves-end equipment-end];
-    grid-template-rows:[initiative-start] 20px [initiative-end] 20px [attribute-start armor-start saves-start health-start] 200px [health-end attribute-end armor-end saves-end] 20px [skills-start equipment-start weapons-start] 620px [weapons-end equipment-end skills-end];
+    grid-template-rows:[initiative-start] 20px [initiative-end] 20px [attribute-start armor-start saves-start health-start] 200px [health-end attribute-end armor-end saves-end] 40px [skills-start equipment-start weapons-start] 620px [weapons-end equipment-end skills-end];
     grid-gap:0px;
+    align-items:start;
 }
 .sheet-attribute-container {
     grid-area:attribute;
@@ -459,7 +469,6 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
     width:250px;
     grid-area:initiative;
 }
-/*172X200*/
 .sheet-health-resolve-container {
     grid-area:health;
 }
@@ -467,6 +476,23 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
     display:inline-grid !important;
     grid-template-columns:[label-start]40px[label-end current-start]50px[current-end slash-start] 10px [slash-end max-start] 50px [max-end];
     grid-template-rows:[stamina-start]45px[stamina-end hp-start]45px[hp-end rp-start]45px[rp-end temp-start]45px[temp-end];
+}
+.sheet-health-resolve-container,
+.sheet-saving-container,
+.sheet-attribute-container,
+.sheet-ac-container{
+    min-height:190px;
+}
+.sheet-saving-container,
+.sheet-attribute-container,
+.sheet-ac-container{
+    display:inline-block;
+    
+}
+.sheet-equipment,
+.sheet-skills-container,
+.sheet-weapons{
+    min-height:620px;
 }
 .sheet-current,
 .sheet-health-container .sheet-attr-total-container,
@@ -483,8 +509,6 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
 .sheet-current,
 .sheet-max,
 .sheet-slash {
-    font-weight:900;
-    font-family:Contrail One;
     font-size:10pt !important;
 }
 .sheet-health-label {
@@ -541,7 +565,6 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
     align-content:flex-start;
     position:relative;
     width:100%
-    height:100%;
 }
 .sheet-armor-container,
 .sheet-attr-container,
@@ -620,10 +643,14 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
 .sheet-attribute-container span {
 	text-align:center;
 }
-.sheet-armor-container span {
+.sheet-armor-container span,
+.sheet-armor-container select,
+.sheet-save-container span,
+.sheet-save-container select{
 	height:15px;
 }
 .sheet-armor-container {
+    margin-left:5px;
 	margin-right:5px;
 }
 .sheet-ac {
@@ -658,9 +685,6 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
 	text-align:center !important;
 	width:80px !important;
 }
-.sheet-dr-span {
-    margin-left:0px;
-}
 .sheet-dr {
 	margin-left:5px;
 	width:80px;
@@ -669,15 +693,18 @@ span.sheet-resist {
 	margin-right:5px;
 }
 .sheet-armor-container textarea {
-	height:2.5em;
-	width:145px;
-	max-width:145px;
+	height:63px;
+	max-height:63px;
+	width:170px;
+	max-width:170px;
 }
 
 .sheet-save-container textarea {
-    height:2.5em;
-	width:141px;
-	max-width:141px;
+    height:77px;
+    max-height:77px;
+	width:170px;
+	max-width:170px;
+	margin-left:5px;
 }
 .sheet-health-resolve-container span,
 .sheet-ac-container span {
@@ -755,7 +782,7 @@ span.sheet-resist {
 .sheet-item-container {
     position:relative;
     width:265px;
-    margin-left:5px;
+    height:500px;
 }
 .sheet-item-name-col {
     width:100%;
@@ -779,6 +806,7 @@ span.sheet-resist {
     position:relative;
     width:245px;
     padding:0px;
+    margin-left:5px;
     margin-right:5px;
     margin-top:5px;
 }
@@ -847,11 +875,12 @@ span.sheet-resist {
 	min-height: 27px;
 }
 .repcontrol .btn {
-	visibility: hidden;
-	border: medium none;
-	color: white !important;
-	background: none;
-	box-shadow: none;
+    border: medium none;
+    color: white !important;
+    background: none;
+    box-shadow: none;
+    font-size: 0;
+    width: 1em;
 }
 .repcontrol .btn:focus {
 	outline: 0;
@@ -887,12 +916,17 @@ span.sheet-resist {
 	color: black;
 	position:absolute;
 }
+.repcontrol_add,
+.repcontrol_edit{
+    z-index:10;
+}
 .repcontainer[data-groupname='repeating_attack'] .repitem {
     position:relative;
     width:241px;
     padding:0px;
-    margin-left:0px;
+    margin-left:5px;
     margin-top:5px;
+    margin-right:5px !important;
 }
 .repcontainer[data-groupname='repeating_attack'] {
     width:100%;
@@ -1101,8 +1135,9 @@ span.sheet-resist {
     align-content:center;
 }
 .sheet-acp:after {
-    content:' b';
+    content:'b';
     font-family:Pictos Three;
+    position:absolute;
 }
 .sheet-skill-container > * {
     margin: auto 0px;
@@ -1126,10 +1161,11 @@ span.sheet-resist {
 	opacity:100;
 }
 .sheet-skill-container textarea {
-    max-width:360px;
-    width:360px;
+    max-width:260px;
+    width:260px;
     height:90px;
     max-height:90px;
+    margin-left:5px;
 }
 .repcontainer[data-groupname='repeating_profession'] {
     position:relative;
@@ -1140,17 +1176,31 @@ span.sheet-resist {
 .repcontainer[data-groupname='repeating_profession'] .sheet-skill-container {
     background-color:white;
 }
-.sheet-skills-container .repcontrol .repcontrol_add:before {
+.sheet-skills-container .repcontrol .repcontrol_add{
     position:relative;
-    left:-125px;
+    left:5px;
 }
-.sheet-skills-container .repcontrol .repcontrol_edit:after {
+.sheet-skills-container .repcontrol .repcontrol_edit{
     position:relative;
-    left:0px !important;
+    left:-5px !important;
+}
+.sheet-skills-container .repcontrol .repcontrol_edit:after,
+.sheet-skills-container .repcontrol .repcontrol_add:before{
+    position:relative;
+    left:-8px;
+    top:3px;
+}
+.sheet-skill-fieldset{
+    position:relative;
+    width:100%;
+}
+.sheet-skill-fieldset .sheet-skill-container .sheet-abi {
+    margin-right:0px !important;
 }
 .sheet-profession-placeholder{
     position:absolute;
-    top:420px;
+    top:5px;
+    left:0px;
     color:gray;
     width:100%;
     text-align:center;
@@ -1171,7 +1221,7 @@ span.sheet-resist {
 .sheet-mod-buff:checked ~ .sheet-modified-attr {
     color:#2dafeb;
     font-weight:900 !important;
-    font-family:Contrail One !important;
+    font-family:Aldrich !important;
 }
 .sheet-mod-buff:checked ~ .sheet-modified-attr:after{
     font-family:Pictos;
@@ -1181,7 +1231,7 @@ span.sheet-resist {
 .sheet-mod-debuff:checked ~ .sheet-modified-attr {
     color:#fa893a;
     font-weight:900 !important;
-    font-family:Contrail One !important;
+    font-family:Aldrich !important;
 }
 .sheet-mod-debuff:checked ~ .sheet-modified-attr:after{
     font-family:Pictos;
