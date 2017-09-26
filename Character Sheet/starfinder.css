@@ -374,10 +374,7 @@ input[type=radio].sheet-tab-button + span {
 	text-align: center;
 	font-weight: bold;
 }
-input[type=radio].sheet-item-equip:checked + span,
-input[type=radio].sheet-tab-button:checked + span {
-	background-color: #333398;
-}
+
 input[type=radio]:hover + span,
 input[type=radio]:hover + h1 {
 	color: #f86f1a;
@@ -410,8 +407,7 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
 .sheet-equipment {
     grid-area:equipment;
     align-content:flex-start;
-    justify-content:flex-start !important;
-    flex-direction:column;
+    justify-content:space-between !important;
 }
 .sheet-initiative-container button{
     background-image:url('https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/533e5c9f/Selected%20Starfinder%20Header.png')!important;
@@ -542,19 +538,23 @@ input[type=radio].sheet-tab-button.sheet-options:checked ~ .sheet-page.sheet-opt
     position:relative;
     padding:0px;
 }
-.sheet-base-attr,
-.sheet-modified-attr{
+.sheet-attr-container .sheet-base-attr,
+.sheet-attr-container .sheet-modified-attr{
     position:absolute;
 }
 .sheet-base-attr {
     opacity:0;
     z-index:2;
+}
+.sheet-attr-container .sheet-base-attr {
     top:0px;
     left:-5px;
 }
 .sheet-modified-attr {
     text-align:center;
     display:block;
+}
+.sheet-attr-container .sheet-modified-attr {
     border-bottom:1px solid #D3D3D3;
     top:-4px !important;
     left:-10px !important;
@@ -652,8 +652,24 @@ span.sheet-resist {
 	width:25px;
 }
 /*Equipment Styling*/
-.sheet-bulk-container {
+.sheet-bulk-container input,
+.sheet-wealth input {
+    text-align:center;
+    border-bottom:0px !important;
+    color:inherit !important;
+    cursor:text;
+}
+.sheet-carried {
+    width:60px!important;
+}
+.sheet-encumber{
     width:80px;
+}
+.sheet-overburden {
+    width:90px;
+    margin-right:auto!important;
+}
+.sheet-bulk-container {
     height:35px;
     margin-bottom:5px;
     margin-left:5px;
@@ -668,7 +684,7 @@ span.sheet-resist {
 .sheet-credits-container .sheet-number,
 .sheet-credits-container .sheet-label {
     display:inline-block;
-    width:80px;
+    width:100%;
 }
 .sheet-credits-container {
     width:80px;
@@ -681,6 +697,9 @@ span.sheet-resist {
     text-align:center;
     position:relative;
 }
+.sheet-wealth {
+    margin-right:5px;
+}
 .sheet-credits-container input {
     width:78px !important;
 }
@@ -690,32 +709,17 @@ span.sheet-resist {
     top:10px;
 }
 .sheet-item-container {
-    margin-left:25px;
     position:relative;
+    width:265px;
+    margin-left:5px;
 }
 .sheet-item-name-col {
-    width:45%;
+    width:100%;
     height:15px;
     text-align:center;
     display:block;
     margin-right:5%;
-}
-.sheet-item-name-container {
-    width:340px;
-    height:15px;
     border-bottom:1px solid black;
-    display: flex;
-    display: -webkit-flex;
-    display: -moz-flex;
-    -webkit-flex-wrap:wrap;
-    -moz-flex-wrap:wrap;
-    flex-wrap:wrap;
-    -webkit-justify-content:flex-start;
-    -moz-justify-content:flex-start;
-    justify-content:flex-start;
-    -webkit-align-content:flex-start;
-    -moz-align-content:flex-start;
-    align-content:flex-start;
 }
 .sheet-summary,
 .sheet-display {
@@ -729,7 +733,7 @@ span.sheet-resist {
 }
 .repcontainer[data-groupname='repeating_item']  .repitem {
     position:relative;
-    width:160px !important;
+    width:245px;
     padding:0px;
     margin-right:5px;
 }
@@ -738,12 +742,9 @@ span.sheet-resist {
     width:100%;
 }
 .repcontainer[data-groupname='repeating_item'] {
-    width:360px;
-    height:140px;
+    width:100%;
+    max-height:460px;
     padding:0px;
-    display:flex;
-    flex-wrap:wrap;
-    align-content:flex-start;
     overflow-y:auto;
     overflow-x:hidden;
 }
@@ -774,37 +775,7 @@ span.sheet-resist {
     width:90% !important;
 }
 .sheet-item-equip {
-    position:absolute;
-}
-input[type=radio].sheet-item-equip.sheet-equipped,
-input[type=radio].sheet-item-equip.sheet-equipped + span {
-    left: 0px;
-}
-input[type=radio].sheet-item-equip.sheet-carried,
-input[type=radio].sheet-item-equip.sheet-carried + span {
-    left: 25px;
-}
-input[type=radio].sheet-item-equip.sheet-not-carried,
-input[type=radio].sheet-item-equip.sheet-not-carried + span {
-    left: 50px;
-}
-input[type=radio].sheet-item-equip {
-    opacity: 0;
-    width: 20px;
-    height: 20px;
-    z-index: 10;
-}
-input[type=radio].sheet-item-equip + span {
-    width: 17px;
-    height: 17px;
-    border: 1px solid black;
-    border-radius: 100%;
-    background-color: #E8E8E8;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    padding-left:5px;
-    padding-right:5px;
+    width:5.5em;
 }
 .sheet-item-description {
     max-width:182px !important;
@@ -812,12 +783,14 @@ input[type=radio].sheet-item-equip + span {
     z-index:1;
 }
 .sheet-item-container .repcontrol .repcontrol_add:before {
-    top:5px;
-    left:-23px;
+    position:relative;
+    top:0px;
+    left:-10px;
 }
 .sheet-item-container .repcontrol .repcontrol_edit:after {
-    left:-23px;
-    top:108px;
+    position:relative;
+    left:-10px;
+    top:0px;
 }
 /*Repeating attack styling*/
 .repcontrol {
@@ -1140,7 +1113,14 @@ input[type=radio].sheet-item-equip + span {
     width:30px;
     left:80px;
 }
-
+.sheet-encumbered:checked ~ .sheet-encumber {
+    color:white !important;
+    background-color:#f86f1a;
+}
+.sheet-overburdened:checked ~ .sheet-overburden {
+    color:white !important;
+    background-color:#f86f1a;
+}
 .sheet-mod-buff:checked ~ .sheet-modified-attr {
     color:#7395cc !important;
     font-weight:900 !important;
