@@ -1332,16 +1332,10 @@ input[type=checkbox]:checked +.sheet-buff-name {
 	font-weight: bold;
 }
 
-.sheet-rolltemplate-sf_attack-character_name,
-.sheet-rolltemplate-sf_generic-character_name {
-    text-decoration: underline;
-}
-
-.sheet-rolltemplate-sf_attack-info,
-.sheet-rolltemplate-sf_generic-info {
+.sheet-rolltemplate-sf_attack-content,
+.sheet-rolltemplate-sf_generic-content {
     min-height:16px;
     height: 100%;
-    padding: 9px;
     color: #000;
     background-color: #366893;
     border-radius: 9px;
@@ -1350,45 +1344,41 @@ input[type=checkbox]:checked +.sheet-buff-name {
 	font-weight: bold;
 }
 
-.sheet-rolltemplate-sf_attack-info_check
-.sheet-rolltemplate-sf_generic-info_check {
-    height:16px;
-}
-
-.sheet-rolltemplate-sf_attack-info_att_left,
-.sheet-rolltemplate-sf_attack-info_dmgn_left,
-.sheet-rolltemplate-sf_attack-info_dmgc_left,
-.sheet-rolltemplate-sf_generic-info_check_left {
-    text-align: left;
-    float: left;
-}
-
-.sheet-rolltemplate-sf_attack-info_att_right,
-.sheet-rolltemplate-sf_attack-info_dmgn_right,
-.sheet-rolltemplate-sf_attack-info_dmgc_right,
-.sheet-rolltemplate-sf_generic-info_check_right {
-    text-align: right;
-    float: right;
-}
-
-.sheet-rolltemplate-sf_attack-info_dmg {
+.sheet-rolltemplate-sf_attack-content_attack,
+.sheet-rolltemplate-sf_attack-content_damage_part,
+.sheet-rolltemplate-sf_generic-content_save,
+.sheet-rolltemplate-sf_generic-content_roll {
     min-height:16px;
     height: 100%;
-    margin-top: 9px;
     padding: 9px;
+}
+
+.sheet-rolltemplate-sf_attack-content_damage {
+    margin: 1px;
     color: #000;
     background-color: #366263;
     border-radius: 9px;
 }
 
-.sheet-rolltemplate-sf_attack-info_dmg_crit {
-    padding-top: 9px;
-    min-height:16px;
-    height: 100%;
+.sheet-rolltemplate-sf_attack-content_check,
+.sheet-rolltemplate-sf_generic-content_check {
+    height:16px;
 }
 
-.sheet-rolltemplate-sf_attack-info_notes,
-.sheet-rolltemplate-sf_generic-info_notes {
+.sheet-rolltemplate-sf_attack-content_left,
+.sheet-rolltemplate-sf_generic-content_left {
+    text-align: left;
+    float: left;
+}
+
+.sheet-rolltemplate-sf_attack-content_right,
+.sheet-rolltemplate-sf_generic-content_right {
+    text-align: right;
+    float: right;
+}
+
+.sheet-rolltemplate-sf_attack-content_notes,
+.sheet-rolltemplate-sf_generic-content_notes {
     min-height:16px;
     height: 100%;
     text-align: left;

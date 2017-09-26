@@ -588,7 +588,7 @@
                         <span class='label abi'></span>
                     </div>
                     <div class='skill-container'>
-                        <button class='acp' type='roll' name='roll_acrobatics' value='/w @{character_name} &{template:default} {{Acrobatics=[[1d20+@{acrobatics}]]}} {{@{character_name}}}' data-i18n='acrobatics' title='%{acrobatics}'>ACROBATICS </button>
+                        <button class='acp' type='roll' name='roll_acrobatics' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Acrobatics}}  {{check=[[1d20+@{acrobatics}]]}}' data-i18n='acrobatics' title='%{acrobatics}'>ACROBATICS </button>
                         <input class='mod-debuff' type='radio' name='attr_acrobatics_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_acrobatics_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_acrobatics_change' value='1' hidden='true'>
@@ -608,7 +608,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button class='acp' type='roll' name='roll_athletics' value='/w @{character_name} &{template:default} {{Athletics=[[1d20+@{athletics}]]}} {{@{character_name}}}' data-i18n='athletics' title='%{athletics}'>ATHLETICS </button>
+                        <button class='acp' type='roll' name='roll_athletics' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Athletics}}  {{check=[[1d20+@{athletics}]]}}' data-i18n='athletics' title='%{athletics}'>ATHLETICS </button>
                         <input class='mod-debuff' type='radio' name='attr_athletics_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_athletics_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_athletics_change' value='1' hidden='true'>
@@ -628,7 +628,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_bluff' value='/w @{character_name} &{template:default} {{Bluff=[[1d20+@{bluff}]]}} {{@{character_name}}}' data-i18n='bluff' title='%{bluff}'>BLUFF </button>
+                        <button type='roll' name='roll_bluff' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Bluff}}  {{check=[[1d20+@{bluff}]]}}' data-i18n='bluff' title='%{bluff}'>BLUFF </button>
                         <input class='mod-debuff' type='radio' name='attr_bluff_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_bluff_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_bluff_change' value='1' hidden='true'>
@@ -648,7 +648,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_computers' value='/w @{character_name} &{template:default} {{Computers=[[1d20+@{computers}]]}} {{@{character_name}}}' data-i18n='computers' title='%{computers}'>COMPUTERS </button>
+                        <button type='roll' name='roll_computers' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Computers}}  {{check=[[1d20+@{computers}]]}}' data-i18n='computers' title='%{computers}'>COMPUTERS </button>
                         <input class='mod-debuff' type='radio' name='attr_computers_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_computers_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_computers_change' value='1' hidden='true'>
@@ -668,7 +668,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_culture' value='/w @{character_name} &{template:default} {{Culture=[[1d20+@{Culture}]]}} {{@{character_name}}}' data-i18n='culture' title='%{culture}'>CULTURE </button>
+                        <button type='roll' name='roll_culture' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Culture}}  {{check=[[1d20+@{culture}]]}}' data-i18n='culture' title='%{culture}'>CULTURE </button>
                         <input class='mod-debuff' type='radio' name='attr_culture_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_culture_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_culture_change' value='1' hidden='true'>
@@ -688,7 +688,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_diplomacy' value='/w @{character_name} &{template:default} {{Diplomacy=[[1d20+@{Diplomacy}]]}} {{@{character_name}}}' data-i18n='diplomacy' title='%{diplomacy}'>DIPLOMACY </button>
+                        <button type='roll' name='roll_diplomacy' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Diplomacy}}  {{check=[[1d20+@{diplomacy}]]}}' data-i18n='diplomacy' title='%{diplomacy}'>DIPLOMACY </button>
                         <input class='mod-debuff' type='radio' name='attr_diplomacy_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_diplomacy_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_diplomacy_change' value='1' hidden='true'>
@@ -708,7 +708,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_disguise' value='/w @{character_name} &{template:default} {{Disguise=[[1d20+@{Disguise}]]}} {{@{character_name}}}' data-i18n='disguise' title='%{disguise}'>DISGUISE </button>
+                        <button type='roll' name='roll_disguise' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Disguise}}  {{check=[[1d20+@{disguise}]]}}' data-i18n='disguise' title='%{disguise}'>DISGUISE </button>
                         <input class='mod-debuff' type='radio' name='attr_disguise_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_disguise_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_disguise_change' value='1' hidden='true'>
@@ -728,7 +728,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_engineering' value='/w @{character_name} &{template:default} {{Engineering=[[1d20+@{Engineering}]]}} {{@{character_name}}}' data-i18n='engineering' title='%{engineering}'>ENGINEERING </button>
+                        <button type='roll' name='roll_engineering' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Engineering}}  {{check=[[1d20+@{engineering}]]}}' data-i18n='engineering' title='%{engineering}'>ENGINEERING </button>
                         <input class='mod-debuff' type='radio' name='attr_engineering_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_engineering_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_engineering_change' value='1' hidden='true'>
@@ -748,7 +748,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_intimidate' value='/w @{character_name} &{template:default} {{Intimidate=[[1d20+@{intimidate}]]}} {{@{character_name}}}' data-i18n='intimidate' title='%{intimidate}'>INTIMIDATE </button>
+                        <button type='roll' name='roll_intimidate' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Intimidate}}  {{check=[[1d20+@{intimidate}]]}}' data-i18n='intimidate' title='%{intimidate}'>INTIMIDATE </button>
                         <input class='mod-debuff' type='radio' name='attr_intimidate_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_intimidate_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_intimidate_change' value='1' hidden='true'>
@@ -768,7 +768,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_life_science' value='/w @{character_name} &{template:default} {{Life Science=[[1d20+@{life_science}]]}} {{@{character_name}}}' data-i18n='life_science' title='%{life_science}'>LIFE SCIENCE </button>
+                        <button type='roll' name='roll_life_science' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Life Science}}  {{check=[[1d20+@{life_science}]]}}' data-i18n='life_science' title='%{life_science}'>LIFE SCIENCE </button>
                         <input class='mod-debuff' type='radio' name='attr_life_science_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_life_science_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_life_science_change' value='1' hidden='true'>
@@ -788,7 +788,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_medicine' value='/w @{character_name} &{template:default} {{Medicine=[[1d20+@{Medicine}]]}} {{@{character_name}}}' data-i18n='medicine' title='%{medicine}'>MEDICINE </button>
+                        <button type='roll' name='roll_medicine' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Medicine}}  {{check=[[1d20+@{medicine}]]}}' data-i18n='medicine' title='%{medicine}'>MEDICINE </button>
                         <input class='mod-debuff' type='radio' name='attr_medicine_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_medicine_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_medicine_change' value='1' hidden='true'>
@@ -808,7 +808,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_mysticism' value='/w @{character_name} &{template:default} {{Mysticism=[[1d20+@{Mysticism}]]}} {{@{character_name}}}' data-i18n='mysticism' title='%{mysticism}'>MYSTICISM </button>
+                        <button type='roll' name='roll_mysticism' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Mysticism}}  {{check=[[1d20+@{mysticism}]]}}' data-i18n='mysticism' title='%{mysticism}'>MYSTICISM </button>
                         <input class='mod-debuff' type='radio' name='attr_mysticism_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_mysticism_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_mysticism_change' value='1' hidden='true'>
@@ -828,7 +828,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_perception' value='/w @{character_name} &{template:default} {{Perception=[[1d20+@{Perception}]]}} {{@{character_name}}}' data-i18n='perception' title='%{perception}'>PERCEPTION </button>
+                        <button type='roll' name='roll_perception' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Perception}}  {{check=[[1d20+@{perception}]]}}' data-i18n='perception' title='%{perception}'>PERCEPTION </button>
                         <input class='mod-debuff' type='radio' name='attr_perception_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_perception_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_perception_change' value='1' hidden='true'>
@@ -848,7 +848,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_physical_science' value='/w @{character_name} &{template:default} {{Physical Science=[[1d20+@{Physical_Science}]]}} {{@{character_name}}}' data-i18n='physical_science' title='%{physical_science}'>PHSYICAL SCIENCE </button>
+                        <button type='roll' name='roll_physical_science' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Physical Science}}  {{check=[[1d20+@{physical_science}]]}}' data-i18n='physical_science' title='%{physical_science}'>PHSYICAL SCIENCE </button>
                         <input class='mod-debuff' type='radio' name='attr_physical_science_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_physical_science_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_physical_science_change' value='1' hidden='true'>
@@ -868,7 +868,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_piloting' value='/w @{character_name} &{template:default} {{Piloting=[[1d20+@{Piloting}]]}} {{@{character_name}}}' data-i18n='piloting' title='%{piloting}'>PILOTING </button>
+                        <button type='roll' name='roll_piloting' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Piloting}}  {{check=[[1d20+@{piloting}]]}}' data-i18n='piloting' title='%{piloting}'>PILOTING </button>
                         <input class='mod-debuff' type='radio' name='attr_piloting_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_piloting_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_piloting_change' value='1' hidden='true'>
@@ -892,7 +892,7 @@
                         <fieldset class='repeating_profession'>
                             <div class='skill-container'>
                                 <button type='roll' name='roll_profession' value='@{profession_macro}' data-i18n='profession' title='%{repeating_profession_$X_profession_roll}'>PROFESSION </button>
-                                <input type='hidden' name='attr_profession_macro' value='/w @{character_name} &{template:default} {{@{profession_name}=[[1d20+@{profession}]]}} {{@{character_name}}}'>
+                                <input type='hidden' name='attr_profession_macro' value='&{template:sf_generic} {{name=@{character_name}}} {{title=@{profession_name}}}  {{check=[[1d20+@{profession}]]}}'>
                                 <input class='prof-name' type='text' name='attr_profession_name' placeholder='artist'>
                                 <input class='mod-debuff' type='radio' name='attr_profession_change' value='-1' hidden='true'>
                                 <input class='mod-normal' type='radio' name='attr_profession_change' value='0' hidden='true' checked='checked'>
@@ -916,7 +916,7 @@
                         </fieldset>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_sense_motive' value='/w @{character_name} &{template:default} {{Sense Motive=[[1d20+@{Sense_Motive}]]}} {{@{character_name}}}' data-i18n='sense_motive' title='%{sense_motive}'>SENSE MOTIVE </button>
+                        <button type='roll' name='roll_sense_motive' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Sense Motive}}  {{check=[[1d20+@{sense_motive}]]}}' data-i18n='sense_motive' title='%{sense_motive}'>SENSE MOTIVE </button>
                         <input class='mod-debuff' type='radio' name='attr_sense_motive_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_sense_motive_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_sense_motive_change' value='1' hidden='true'>
@@ -936,7 +936,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button class='acp' type='roll' name='roll_sleight_of_hand' value='/w @{character_name} &{template:default} {{Sleight of Hand=[[1d20+@{Sleight_of_Hand}]]}} {{@{character_name}}}' data-i18n='sleight_of_hand' title='%{sleight_of_hand}'>SLEIGHT OF HAND </button>
+                        <button class='acp' type='roll' name='roll_sleight_of_hand' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Sleight of Hand}}  {{check=[[1d20+@{sleight_of_hand}]]}}' data-i18n='sleight_of_hand' title='%{sleight_of_hand}'>SLEIGHT OF HAND </button>
                         <input class='mod-debuff' type='radio' name='attr_sleight_of_hand_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_sleight_of_hand_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_sleight_of_hand_change' value='1' hidden='true'>
@@ -956,7 +956,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button class='acp' type='roll' name='roll_stealth' value='/w @{character_name} &{template:default} {{Stealth=[[1d20+@{Stealth}]]}} {{@{character_name}}}' data-i18n='stealth' title='%{stealth}'>STEALTH </button>
+                        <button class='acp' type='roll' name='roll_stealth' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Stealth}}  {{check=[[1d20+@{stealth}]]}}' data-i18n='stealth' title='%{stealth}'>STEALTH </button>
                         <input class='mod-debuff' type='radio' name='attr_stealth_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_stealth_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_stealth_change' value='1' hidden='true'>
@@ -976,7 +976,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_survival' value='/w @{character_name} &{template:default} {{Survival=[[1d20+@{Survival}]]}} {{@{character_name}}}' data-i18n='survival' title='%{survival}'>SURVIVAL </button>
+                        <button type='roll' name='roll_survival' value='&{template:sf_generic} {{name=@{character_name}}} {{title=Survival}}  {{check=[[1d20+@{survival}]]}}' data-i18n='survival' title='%{survival}'>SURVIVAL </button>
                         <input class='mod-debuff' type='radio' name='attr_survival_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_survival_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_survival_change' value='1' hidden='true'>
@@ -1181,33 +1181,41 @@
         
     </div>
 	<div class="sheet-section-roll_templates" style="display:none; opacity:0; height:1em; overflow:hidden;" role="contentinfo" aria-label="rolltemplates" >
-		<!-- Generic Roll Templates -->
+		<!-- Generic Roll Template -->
 		<!-- Macro Text: 
             &{template:sf_generic} {{name=@{character_name}}} {{title= }} {{check= }} {{save= }} {{notes= }} }}
         -->
         <rolltemplate class="sheet-rolltemplate-sf_generic">
-            <div class='sheet-rolltemplate-sf_generic-header'>
-                <span class='sheet-rolltemplate-sf_generic-character_name'>{{name}}</span><span> : {{title}}</span>
+            <div class="sheet-rolltemplate-sf_generic-header">
+                <span style="text-decoration: underline">{{name}}</span><span>: {{title}}</span>
             </div>
-            <div class='sheet-rolltemplate-sf_generic-spacer'></div>
-            <div class='sheet-rolltemplate-sf_generic-info'>
+            <div class="sheet-rolltemplate-sf_generic-content">
                 {{#check}}
-                <div class='sheet-rolltemplate-sf_generic-info_check'>
-                    <div class='sheet-rolltemplate-sf_generic-info_check_left'>
-                        <span>Check:</span>
-                    </div>
-                    <div class='sheet-rolltemplate-sf_generic-info_check_right'>
-                        <span>{{check}}</span>
+                <div class="sheet-rolltemplate-sf_generic-content_roll">
+                    <div class="sheet-rolltemplate-sf_generic-content_check">
+                        <div class="sheet-rolltemplate-sf_generic-content_left">
+                            <span>Check:</span>
+                        </div>
+                        <div class="sheet-rolltemplate-sf_generic-content_right">
+                            <span>{{check}}</span>
+                        </div>
                     </div>
                 </div>
                 {{/check}}
                 {{#save}}
-                <div class="sheet-rolltemplate-sf_generic-info_notes">
-                    <span>Save vs: </span> <span>{{save}}</span>
+                <div class="sheet-rolltemplate-sf_generic-content_save">
+                    <div class="sheet-rolltemplate-sf_generic-content_check">
+                        <div class="sheet-rolltemplate-sf_generic-content_left">
+                            <span>Save:</span>
+                        </div>
+                        <div class="sheet-rolltemplate-sf_generic-content_right">
+                            <span>{{save}}</span>
+                        </div>
+                    </div>
                 </div>
                 {{/save}}
                 {{#notes}}
-                <div class="sheet-rolltemplate-sf_generic-info_notes">
+                <div class="sheet-rolltemplate-sf_generic-content_notes">
                     <span>Notes: </span> <span>{{notes}}</span>
                 </div>
                 {{/notes}}
@@ -1218,6 +1226,51 @@
             &{template:sf_attack} {{name=@{character_name}}} {{title=@{attack_name}}} {{attack=[[1d20+@{bab}[BAB]+@{attack_ability_value}[ABILITY]@{attack_misc}@{attack_bonus}]]}} {{damage=[[@{attack_dmg_dice}+@{attack_dmg_ability_value}[ABILITY]@{attack_dmg_misc}@{attack_dmg_bonus}]]}} {{dmgcrit=[[@{attack_dmg_dice}+@{attack_dmg_ability_value}[ABILITY]@{attack_dmg_misc}@{attack_dmg_bonus}]]}} {{notes= }} }}
         -->
         <rolltemplate class="sheet-rolltemplate-sf_attack">
+            <div class="sheet-rolltemplate-sf_attack-header">
+                <span style="text-decoration: underline">{{name}}</span><span>: {{title}}</span>
+            </div>
+            <div class="sheet-rolltemplate-sf_attack-content">
+                {{#attack}}
+                <div class="sheet-rolltemplate-sf_attack-content_attack">
+                    <div class="sheet-rolltemplate-sf_attack-content_check">
+                        <div class="sheet-rolltemplate-sf_attack-content_left">
+                            <span>Attack:</span>
+                        </div>
+                        <div class="sheet-rolltemplate-sf_attack-content_right">
+                            <span>{{attack}}</span>
+                        </div>
+                    </div>
+                </div>
+                {{/attack}}
+                {{#damage}}
+                <div class='sheet-rolltemplate-sf_attack-content_damage'>
+                    <div class='sheet-rolltemplate-sf_attack-content_damage_part'>
+                        <div class='sheet-rolltemplate-sf_attack-content_left'>
+                            <span>Damage:</span>
+                        </div>
+                        <div class='sheet-rolltemplate-sf_attack-content_right'>
+                            <span>{{damage}}</span>
+                        </div>
+                    </div>
+                    {{#rollWasCrit() attack}}
+                    <div class='sheet-rolltemplate-sf_attack-content_damage_part'>
+                        <div class='sheet-rolltemplate-sf_attack-content_left'>
+                            <span>Crit Damage:</span>
+                        </div>
+                        <div class='sheet-rolltemplate-sf_attack-content_right'>
+                            <span>{{dmgcrit}}</span>
+                        </div>
+                    </div>
+                    {{/rollWasCrit() attack}}
+                </div>
+                {{/damage}}
+                {{#notes}}
+                <div class="sheet-rolltemplate-sf_attack-content_notes">
+                    <span>Notes: </span> <span>{{notes}}</span>
+                </div>
+                {{/notes}}
+            </div>
+            <!--
             <div class='sheet-rolltemplate-sf_attack-header'>
                 <span class='sheet-rolltemplate-sf_attack-character_name'>{{name}}</span><span> : {{title}}</span>
             </div>
@@ -1263,8 +1316,12 @@
                     </div>
                 {{/notes}}
             </div>
+            -->
         </rolltemplate>
-        
+        <!-- Spell Roll Templates -->
+		<rolltemplate class="sheet-rolltemplate-sf_spell">
+            
+		</rolltemplate>
         
         
 	</div>
