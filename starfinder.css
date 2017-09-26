@@ -1,10 +1,10 @@
 @font-face{
     font-family:Aldrich;
-    src:local('Aldrich'),url(https://sfk-steelsong.github.io/Starfinder-Character-Sheet/content/fonts/Starfinder%20Sheet%20Fonts/Aldrich-Regular.ttf);
+    src:local('Aldrich'),url(https://sfk-steelsong.github.io/Starfinder-Character-Sheet/content/fonts/Aldrich-Regular.ttf);
 }
 @font-face{
     font-family:Exo2;
-    src:local('Exo2'),url(https://sfk-steelsong.github.io/Starfinder-Character-Sheet/content/fonts/Starfinder%20Sheet%20Fonts/Exo2-Light.ttf);
+    src:local('Exo2'),url(https://sfk-steelsong.github.io/Starfinder-Character-Sheet/content/fonts/Exo2-Light.ttf);
 }
 * {
     font-family:Exo2,Monospace;
