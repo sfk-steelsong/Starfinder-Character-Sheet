@@ -1042,8 +1042,7 @@
                                     <input hidden='true' name='attr_attack_ability_value' value='0'>
                                     <span class='arith'>+</span>
                                     <input class='bab' name='attr_attack_bab' disabled='true' title='@{bab}' value='@{bab}'>
-                                    <span class='arith'>+</span>
-                                    <input class='atk-misc misc' type='text' name='attr_attack_bonus' placeholder='@{attr}/2 + ?{Query}'>
+                                    <input class='atk-misc misc' type='text' name='attr_attack_bonus' placeholder='+@{attr}/2 + ?{Query}'>
                                     <span class='label' data-i18n='atk_range'>RNG</span>
                                     <input class='atk-range' type='text' name='attr_attack_range' placeholder='30 ft'>
                                 </div>
@@ -1060,8 +1059,7 @@
                                         <option value='charisma_mod'>CHA</option>
                                     </select>
                                     <input hidden='true' name='attr_attack_dmg_ability_value' value='0'>
-                                    <span class='arith'>+</span>
-                                    <input class='atk-damage' type='text' name='attr_attack_dmg_bonus' placeholder='@{attr}/2 + ?{Query}'>
+                                    <input class='atk-damage' type='text' name='attr_attack_dmg_bonus' placeholder='+@{attr}/2 + ?{Query}'>
                                 </div>
                                 <div class='row'>
                                     <span class='label' data-i18n='atk_type'>TYPE</span>
@@ -1832,7 +1830,7 @@
     /*start starfinder.js*/
     var starfinder = starfinder || (function(){
         'use strict';
-        var version = 0.011505149153,
+        var version = 0.011505259318,
             attributeObjs=[
                 /*
                 {
@@ -2366,15 +2364,18 @@
             var convertSave = {
                     poor:(lvl)=>Math.floor(lvl/3),
                     good:(lvl)=>lvl>0 ? (Math.floor(lvl/2) + 2) : 0
-                };
+                },
+                temp;
             return _.reduce([1,2,3,4,5],(memo,n)=>{
                 memo.level+=(attributes['class-'+n+'-level']*1||0);
                 memo.bab+=Math.floor(attributes['class-'+n+'-bab']*attributes['class-'+n+'-level']||0);
                 _.each(['fort','ref','will'],(save)=>{
                     memo[save+'_base']+=convertSave[attributes['class-'+n+'-'+save]](attributes['class-'+n+'-level']*1||0);
                 });
+                temp=(attributes['class-'+n+'-name']||'')+((attributes['class-'+n+'-name']&&attributes['class-'+n+'-name']!==''&&attributes['class-'+n+'-level']&&attributes['class-'+n+'-level']!=='') ? ' ' : '')+(attributes['class-'+n+'-level']||'');
+                memo['class&level']+=temp.length>0 ? (memo['class&level'].length>0 ? ' / ' : '')+temp : '';
                 return memo;
-            },{level:0,fort_base:0,ref_base:0,will_base:0,bab:0});
+            },{level:0,fort_base:0,ref_base:0,will_base:0,bab:0,'class&level':''});
         },
         
         classHealthHandler = function(){
@@ -2507,13 +2508,15 @@
                 setObj[abi+'_change']=bTotal > 0 ? 1 : bTotal<0 ? -1 :0;
             });
             //Encumbrance
+            setObj.carried_bulk = 0;
+            setObj.wealth=0;
             setObj = _.reduce(_.keys(attributes),(memo,a)=>{
                 let aMatch =a.match(/repeating_item_-[^_]+_item_(bulk|cost)/);
                 if(aMatch){
                     if(aMatch[1]==='bulk'){
-                        memo.carried_bulk = (memo.carried_bulk||0) + ((attributes[a]+'').match(/l/i) ? 0.1 : attributes[a]*1||0)*attributes[a.replace(/bulk/,'quantity')]||0;
+                        memo.carried_bulk = memo.carried_bulk + ((attributes[a]+'').match(/l/i) ? 0.1 : attributes[a]*1||0)*attributes[a.replace(/bulk/,'quantity')]||0;
                     }else{
-                        memo.wealth=(memo.wealth||0) + (attributes[a]*1||0)*attributes[a.replace(/bulk/,'quantity')]||0;
+                        memo.wealth=memo.wealth + (attributes[a]*1||0)*attributes[a.replace(/cost/,'quantity')]||0;
                     }
                 }
                 return memo;
@@ -2531,7 +2534,7 @@
                 bTotal = calcBuffs(attributes,bonus[h],setObj).total;
                 setObj[h+'_max']=(h!=='temp_hp' ? _.reduce([1,2,3,4,5],(memo,n)=>{
                     if(h!=='rp'){
-                        memo += attributes['class-'+n+'-'+h]*attributes['class-'+n+'-level']||0 + (h==='sp' ? (setObj.constitution_mod||attributes.constitution_mod)*attributes['class-'+n+'-level']||0 : 0);
+                        memo += attributes['class-'+n+'-'+h]*attributes['class-'+n+'-level']||0;
                         if(n===5 && h==='hp'){
                             memo+=attributes['race_hp']*1||0;
                         }
@@ -2543,6 +2546,9 @@
                     }
                     return memo;
                 },(h==='rp' ? [] : 0)) : 0) + bTotal;
+                if(h==='sp'){
+                    setObj[h+'_max']+=(setObj.constitution_mod||(setObj.constitution_mod!==0 ? attributes.constitution_mod : 0)||0)*(setObj.level||attributes.level||0);
+                }
                 if(h==='rp'){
                     setObj[h+'_max']=Math.max(setObj[h+'_max']+Math.max(Math.floor((setObj.level*1||attributes.level*1||0)/2),1),1);
                 }
@@ -2553,13 +2559,10 @@
             _.each(['eac','kac'],(ac)=>{
                 bonus[ac] = calcBuffs(attributes,bonus[ac],setObj);
                 bonus[ac+'_armor'] = calcBuffs(attributes,bonus[ac+'_armor'],setObj);
-                TAS.log('bonus['+ac+']: '+JSON.stringify(bonus[ac]));
                 bTotal = bonus[ac].total;
                 armbTotal = bonus[ac+'_armor'].total;
                 let maxDex = calcBuffs(attributes,bonus.max_dex,setObj);
-                TAS.log('maxDex: '+JSON.stringify(maxDex));
                 maxDex = bonus[ac].max_dex || bonus[ac].max_dex===0 ? maxDex.total+maxDex.armor+bonus[ac].max_dex : undefined;
-                TAS.log('post maxDex: '+maxDex);
                 setObj[ac+'_armor']=Math.max(bonus[ac+'_armor'].armor,bonus[ac].armor) + armbTotal;
                 setObj[ac+'_armor_change']=armbTotal > 0 ? 1 : (armbTotal < 0 ? -1 : 0);
                 setObj[ac]=10+(_.min([setObj[attributes[ac+'_ability']]*1||0,maxDex]))+(setObj[ac+'_armor']*1||0)+bTotal;
@@ -2597,7 +2600,13 @@
                                 +_.reduce(obj.textAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]||'')},''),
                                 ((setObj[attributes[repeatFormat+i+obj.ability]]*1||attributes[attributes[repeatFormat+i+obj.ability]]*1||0)+obj.numAdds
                                 +_.reduce(obj.attrAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]*1||0)},0)
-                                +_.reduce(obj.repeatAdds,(memo,add)=>{return memo+(setObj[repeatFormat+i+add]*1||attributes[repeatFormat+i+add]*1||0)},0)+bTotal
+                                +_.reduce(obj.repeatAdds,(memo,add)=>{
+                                    let csMatch = add.match('class_skill');
+                                    if(!csMatch || attributes[repeatFormat+i+add.replace(/class_skill/,'ranks')]*1>0){
+                                        memo+=(setObj[add]*1||attributes[add]*1||0);
+                                    }
+                                    return memo;
+                                },0)+bTotal
                                 +(obj.attr==='attack_total' && attributes[repeatFormat+i+'attack_proficiency']==='no' ? -4 : (obj.attr==='attack_dmg_total' && attributes[repeatFormat+i+'attack_proficiency']==='specialized' ? (attributes[repeatFormat+i+'attack_category'].match(/small arms|operative/i) ? Math.floor((setObj.level||attributes.level)/2) : setObj.level*1||attributes.level*1):0)))])
                             .reject((v)=>{return !v})
                             .value().join(' + ');
@@ -2608,7 +2617,13 @@
                 }else{
                     setObj[obj.attr+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
                     setObj[obj.attr]=(((setObj[attributes[obj.ability]]||attributes[attributes[obj.ability]])*1+obj.numAdds
-                    +_.reduce(obj.attrAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]*1||0)},0)+bTotal)
+                    +_.reduce(obj.attrAdds,(memo,add)=>{
+                        let csMatch = add.match('class_skill');
+                        if(!csMatch || attributes[add.replace(/class_skill/,'ranks')]*1>0){
+                            memo+=(setObj[add]*1||attributes[add]*1||0);
+                        }
+                        return memo;
+                    },0)+bTotal)
                     +_.reduce(obj.textAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]||'')},''));
                 }
             });
