@@ -265,7 +265,22 @@
             </div>
             <input class='in-play-tab buff-tab' type='radio' name='attr_in-play-tab' value='buffs'><h1 class='section label buff-head' data-i18n='buffs'>BUFFS</h1>
             <div class='buffs in-play'>
-                
+                <fieldset class='repeating_buff'>
+                    <div class='buff'>
+                        <input class="show-options" type="checkbox" name="attr_show-options" checked="checked"><span>y</span>
+                        <div class='buff-options'>
+                            <input class='buff-name' type='text' name='attr_buff_name' placeholder='Haste'>
+                            <div class='mod-container'>
+                                <span class='label buff-mod' data-i18n='mods'>MODS</span>
+                                <textarea class='buff-mod' type='text' name='attr_buff_mods'></textarea>
+                            </div>
+                        </div>
+                        <div class='display'>
+                            <input type='checkbox' name='attr_buff_toggle' value='enabled'>
+                            <span class='buff-name label' name='attr_buff_name'></span>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
         <!--</div>-->
         <div class=tab-container>
@@ -504,7 +519,7 @@
                         <div class='label abi'></div>
                     </div>
                     <div class='save-container'>
-                        <button type='roll' name='roll_fort' value='/w @{character_name} &{template:default} {{Acrobatics=[[1d20+@{fort}]]}} {{@{character_name}}}' data-i18n='fort' title='%{fort}'>FORT</button>
+                        <button type='roll' name='roll_fort' value='/w @{character_name} &{template:default} {{Fort save=[[1d20+@{fort}]]}} {{@{character_name}}}' data-i18n='fort' title='%{fort}'>FORT</button>
                         <div class='attr-total-container'>
                             <input class='mod-debuff' type='radio' name='attr_fort_change' value='-1' hidden='true'>
                             <input class='mod-normal' type='radio' name='attr_fort_change' value='0' hidden='true' checked='checked'>
@@ -876,12 +891,13 @@
                         <div class='profession-placeholder' data-i18n='profession_placeholder'>ADD PROFESSIONS HERE</div>
                         <fieldset class='repeating_profession'>
                             <div class='skill-container'>
-                                <button type='roll' name='roll_profession' value='/w @{character_name} &{template:default} {{Profession @{profession_name}=[[1d20+@{Profession}]]}} {{@{character_name}}}' data-i18n='profession' title='%{repeating_profession_$X_profession_roll}'>PROFESSION</button>
+                                <button type='roll' name='roll_profession' value='@{profession_macro}' data-i18n='profession' title='%{repeating_profession_$X_profession_roll}'>PROFESSION</button>
+                                <input type='hidden' name='attr_profession_macro' value='/w @{character_name} &{template:default} {{@{profession_name}=[[1d20+@{profession}]]}} {{@{character_name}}}'>
                                 <input class='prof-name' type='text' name='attr_profession_name' placeholder='artist'>
                                 <input class='mod-debuff' type='radio' name='attr_profession_change' value='-1' hidden='true'>
                                 <input class='mod-normal' type='radio' name='attr_profession_change' value='0' hidden='true' checked='checked'>
                                 <input class='mod-buff' type='radio' name='attr_profession_change' value='1' hidden='true'>
-                                <span class='mod tot modified-attr' readonly='true' type='text' name='attr_profession' title='@{profession}' value='0'>0</span>
+                                <input class='mod tot modified-attr' readonly='true' type='text' name='attr_profession' title='@{profession}' value='0'>
                                 <div class='arith'>=</div>
                                 <input class='ranks' type='number' name='attr_profession_ranks' value='' title='@{profession_ranks}'>
                                 <div class='arith'>+</div>
@@ -1799,7 +1815,7 @@
     /*start starfinder.js*/
     var starfinder = starfinder || (function(){
         'use strict';
-        var version = 0.011504653130,
+        var version = 0.011504803736,
             attributeAffected={
                 'eac':{
                     repeating:false,
@@ -2028,10 +2044,12 @@
                 {
                     section:'profession',
                     fields:['profession_ranks','profession_class_skill','profession_ability']
+                },
+                {
+                    section:'buff',
+                    fields:['buff_mods','buff_toggle']
                 }
             ],
-            noRepeat = ['sp','hp','rp','temp_hp','credits','class-1-name','class-2-name','class-3-name','class-4-name','class-5-name','character_name','race','language','player','deity','alignment','home_world','gender','theme','item_name','attack_name','profession_name','attack_range','attack_usage','attack_crit','attack_special','attack_description','attack_macro','item_description',],
-            
             
         RegisterEventHandlers = function(){
             on('change:tab_select change:class-1-name change:class-2-name change:class-3-name change:class-4-name change:class-5-name change:class-1-level '
@@ -2062,9 +2080,7 @@
             +'change:sense_motive_class_skill change:sense_motive_ability change:sleight_of_hand_ranks change:sleight_of_hand_class_skill '
             +'change:sleight_of_hand_ability change:stealth_ranks change:stealth_class_skill change:stealth_ability change:survival_ranks '
             +'change:survival_class_skill change:survival_ability '
-            +'change:repeating_item '
-            +'change:repeating_attack '
-            +'change:repeating_profession',
+            +'change:repeating_item change:repeating_attack change:repeating_profession change:repeating_buff',
             accessStarfinder);
         },
         SUM = function(numArr){
@@ -2171,7 +2187,8 @@
                     'survival_ability':skillHandler,
                     'profession':skillHandler,
                     'item':equipmentHandler,
-                    'attack':attackHandler
+                    'attack':attackHandler,
+                    'buff':buffHandler
                 },
                 getID = () => {
                     currSection=cloneRepAttr.shift();
@@ -2233,14 +2250,14 @@
                         return k.match(/repeating_(?:item_-[^_]+_item_mods|buff_-[^_]+_buff_mods)/);
                     })
                     .filter((k)=>{
-                        return attributes[k.replace(/item_mods/,'item_equipped').replace(/buff_mods/,'buff_enabled')] ? attributes[k.replace(/item_mods/,'item_equipped').replace(/buff_mods/,'buff_enabled')].match(/enabled|equipped/) : false;
+                        return attributes[k.replace(/item_mods/,'item_equipped').replace(/buff_mods/,'buff_toggle')] ? attributes[k.replace(/item_mods/,'item_equipped').replace(/buff_mods/,'buff_toggle')].match(/enabled|equipped/) : false;
                     })
                     .map((k)=>{
                         return attributes[k];
                     })
                     .reject((f)=>{return _.isEmpty(f)})
                     .reduce((memo,f)=>{
-                        buffSplit = f.split(',');
+                        buffSplit = f.split(/\s*,\s*|\s*\n\s*/);
                         memo=memo.concat(buffSplit);
                         return memo;
                     },[])
@@ -2451,11 +2468,8 @@
                             .unique()
                             .value();
                         _.each(IDs,(i)=>{
-                            TAS.log('attributes['+a.ability+']: '+attributes[a.ability]);
-                            TAS.log(JSON.stringify(a));
                             if(attributes['repeating_'+a.repeating+'_'+i+'_'+a.ability]){
                                 if(attributes['repeating_'+a.repeating+'_'+i+'_'+a.ability].replace(/\+@{|}/g,'')===attribute+'_mod'){
-                                    TAS.log(JSON.stringify(a));
                                     memo['repeating_'+a.repeating+'_'+i+'_'+a.total]=(a.repeatTextAdds ? _.reduce(a.repeatTextAdds,(m,adds)=>{
                                         return m + attributes['repeating_'+a.repeating+'_'+i+'_'+adds]+'+';
                                     },'') : 0)
@@ -2557,7 +2571,6 @@
                 setObj[i]=_.reduce(itemFields,(memo,a)=>{
                     iterID = a.match(/repeating_item_(-[^_]+)/)[1];
                     if(a.match(/bulk/)&&i==='carried_bulk'){
-                        TAS.log(a);
                         if((attributes[a]+'').toLowerCase()==='l'){
                             memo+=0.1*attributes['repeating_item_'+iterID+'_item_quantity']
                         }else if(attributes[a]*1){
@@ -2570,9 +2583,11 @@
                 },0);
             });
             setObj['carried_bulk']=Math.floor(setObj['carried_bulk']);
-            TAS.log('carried_bulk: '+setObj['carried_bulk']);
-            TAS.log('overburden: '+attributes['overburden_bulk']+' |encumber: '+attributes['encumber_bulk']);
             return applyBuffs(attributes,bonus,setObj);
+        },
+        
+        buffHandler = function(attributes,bonus,changed,id){
+            return applyBuffs(attributes,bonus,{});
         },
         
         applyBuffs = function(attributes,bonus,setObj){

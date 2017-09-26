@@ -1,10 +1,10 @@
 @font-face{
     font-family:Aldrich;
-    src:url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Aldrich-Regular.ttf);
+    src:local('Aldrich'),url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Aldrich-Regular.ttf);
 }
 @font-face{
     font-family:Exo2;
-    src:url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Exo2-Light.ttf);
+    src:local('Exo2'),url(https://cdn.rawgit.com/Kurohyou/Starfinder-Character-Sheet/ce9144a9/Starfinder%20Sheet%20Fonts/Exo2-Light.ttf);
 }
 * {
     font-family:Exo2,Monospace;
@@ -207,12 +207,14 @@ span.sheet-nav-label {
     padding:0px;
     margin:0px;
 }
-input[type=radio].sheet-in-play-tab.sheet-menu-tab:checked ~ .sheet-menus,
-input[type=radio].sheet-in-play-tab.sheet-buff-tab:checked ~ .sheet-buffs {
+input[type=radio].sheet-in-play-tab.sheet-menu-tab:checked ~ .sheet-menus {
     display: flex;
     justify-content:flex-start;
     align-items: flex-start;
     flex-direction:column;
+}
+input[type=radio].sheet-in-play-tab.sheet-buff-tab:checked ~ .sheet-buffs{
+    display:block;
 }
 .sheet-buff-head,
 .sheet-menu-head,
@@ -792,11 +794,6 @@ span.sheet-resist {
     margin-right:5%;
     border-bottom:1px solid black;
 }
-.sheet-summary,
-.sheet-display {
-    margin:0px !important;
-    padding:0px !important;
-}
 .sheet-summary {
     width:100%;
     display:flex;
@@ -857,20 +854,86 @@ span.sheet-resist {
     height:3em;
     z-index:1;
 }
-
 .sheet-weapons .repcontrol .repcontrol_add:before,
-.sheet-item-container .repcontrol .repcontrol_add:before {
+.sheet-item-container .repcontrol .repcontrol_add:before,
+.sheet-buffs .repcontrol .repcontrol_add:before{
     position:relative;
     top:0px;
     left:-10px;
 }
 .sheet-weapons .repcontrol .repcontrol_edit:after,
-.sheet-item-container .repcontrol .repcontrol_edit:after {
+.sheet-item-container .repcontrol .repcontrol_edit:after,
+.sheet-buffs .repcontrol .repcontrol_edit:after{
     position:relative;
     left:-10px;
     top:0px;
 }
-/*Repeating attack styling*/
+.sheet-buffs .repcontrol .repcontrol_add {
+    position:absolute;
+    left:5px;
+    top:0px;
+}
+.sheet-buffs .repcontrol .repcontrol_edit {
+    position:absolute;
+    left:5px;
+    top:90px;
+}
+/*buff styling*/
+.repcontainer[data-groupname='repeating_buff'] {
+    width:350px;
+    margin-left:25px;
+    max-height:115px !important;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    
+}
+.repcontainer[data-groupname='repeating_buff'] .repitem:nth-child(odd){
+    float:left;
+}
+.repcontainer[data-groupname='repeating_buff'] .repitem:nth-child(even){
+    float:right;
+}
+.repcontainer[data-groupname='repeating_buff'] .repitem{
+    width:160px;
+    margin:5px 5px 0px 0px;
+}
+.sheet-buff-options .sheet-buff-name{
+    width:160px;
+    margin:5px 0px;
+}
+.sheet-mod-container {
+    position:relative;
+    margin:0px;
+}
+textarea.sheet-buff-mod {
+    width:160px;
+    height:40px;
+    margin:0px;
+    text-indent:50px;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+span.sheet-buff-mod {
+    position:absolute;
+    left:0px;
+    top:0px;
+    background-color:white;
+}
+.sheet-display .sheet-buff-name {
+    display:block;
+    width:145px;
+    float:right;
+    background:#DCDCDC;
+}
+input[type=checkbox]:checked +.sheet-buff-name {
+    background:#333398;
+    color:white;
+}
+.sheet-show-options,
+.sheet-show-options + span {
+    top:0px !important;
+}
+/*Repeating styling*/
 .repcontrol {
 	min-height: 27px;
 }
@@ -974,7 +1037,7 @@ span.sheet-resist {
 .sheet-spell .sheet-show-options,
 .sheet-item .sheet-show-options,
 .sheet-npc .sheet-npc_show-options,
-.sheet-trait .sheet-show-options,
+.sheet-buff .sheet-show-options,
 .sheet-action .sheet-show-options,
 .sheet-equipment .sheet-inventorysubflag
 {
@@ -991,7 +1054,7 @@ span.sheet-resist {
 .sheet-spell .sheet-show-options + span,
 .sheet-item .sheet-show-options + span,
 .sheet-npc .sheet-npc_show-options + span,
-.sheet-trait .sheet-show-options + span,
+.sheet-buff .sheet-show-options + span,
 .sheet-action .sheet-show-options + span,
 .sheet-equipment .sheet-inventorysubflag + span
 {
@@ -1014,7 +1077,7 @@ span.sheet-resist {
 .sheet-spell:hover .sheet-show-options:checked + span,
 .sheet-item:hover .sheet-show-options:checked + span,
 .sheet-npc .sheet-npc_show-options:checked + span,
-.sheet-trait .sheet-show-options:checked + span,
+.sheet-buff:hover .sheet-show-options:checked + span,
 .sheet-action .sheet-show-options:checked + span,
 .sheet-equipment .sheet-inventorysubflag:checked + span
 {
@@ -1026,21 +1089,22 @@ span.sheet-resist {
 .sheet-spell:hover .sheet-show-options + span,
 .sheet-item:hover .sheet-show-options + span,
 .sheet-npc:hover > .sheet-npc_show-options + span,
-.sheet-trait:hover .sheet-show-options + span,
+.sheet-buff:hover .sheet-show-options + span,
 .sheet-action:hover .sheet-npc_show-options + span,
 .sheet-item:hover .sheet-inventorysubflag + span
 {
 	display: block;
 }
 .sheet-atk-options,
-.sheet-item-options{
+.sheet-item-options,
+.sheet-buff-options{
 	display:none;
 }
 .sheet-attack .sheet-show-options:checked ~ .sheet-atk-options,
 .sheet-spell .sheet-show-options:checked ~ .sheet-options,
 .sheet-item .sheet-show-options:checked ~ .sheet-item-options,
 .sheet-npc .sheet-npc_show-options:checked ~ .sheet-npc_options,
-.sheet-trait .sheet-show-options:checked ~ .sheet-options,
+.sheet-buff .sheet-show-options:checked ~ .sheet-buff-options,
 .sheet-action .sheet-show-options:checked ~ .sheet-options
 {
 	display: inherit;
