@@ -38,6 +38,7 @@
 	"abilities-u": "ABILITIES",
 	"ability_checks": "ABILITY CHECKS",
 	"buffs": "BUFFS",
+	"mods": "MODS",
 	"ability_scores": "ABILITY SCORES",
 	"pen": "PEN",
 	"drain": "DRAIN",
@@ -75,7 +76,7 @@
 	"medicine": "MEDICINE",
 	"mysticism": "MYSTICISM",
 	"perception": "PERCEPTION",
-	"physical_science": "PHYSICAL SCIENCE",
+	"physical_science": "PHSYICAL SCIENCE",
 	"piloting": "PILOTING",
 	"profession_placeholder": "ADD PROFESSIONS HERE",
 	"profession": "PROFESSION",
@@ -87,6 +88,10 @@
 	"atk-u": "ATK",
 	"dmg-type-u": "DAMAGE/TYPE",
 	"atk_level": "LVL",
+	"Not-Proficient": "NOT PROFICIENT",
+	"proficient": "PROFICIENT",
+	"specialized": "SPECIALIZED",
+	"category": "CATEGORY",
 	"atk_range": "RNG",
 	"atk_dmg": "DMG",
 	"atk_type": "TYPE",
@@ -102,6 +107,5 @@
 	"item-name": "ITEM NAME",
 	"item_bulk": "BULK",
 	"item_cost": "COST",
-	"item_quantity": "NUM",
-	"mods": "MODS"
+	"item_quantity": "NUM"
 }

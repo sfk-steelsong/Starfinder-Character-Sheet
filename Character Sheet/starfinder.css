@@ -842,15 +842,12 @@ span.sheet-resist {
     width:10% !important;
     text-align:center;
 }
-.sheet-item-mods {
-    width:200px !important;
-}
 .sheet-item-equip {
     width:5.5em;
 }
 .sheet-item-description {
-    width:240px;
-    max-width:240px;
+    width:100%;
+    max-width:100%;
     height:3em;
     z-index:1;
 }
@@ -905,15 +902,18 @@ span.sheet-resist {
     position:relative;
     margin:0px;
 }
-textarea.sheet-buff-mod {
-    width:160px;
+textarea.sheet-buff-mod,
+textarea.sheet-item-mods{
+    width:100%;
     height:40px;
     margin:0px;
     text-indent:50px;
+    max-width:100%;
     overflow-y:hidden;
     overflow-x:hidden;
 }
-span.sheet-buff-mod {
+span.sheet-buff-mod,
+span.sheet-item-mods{
     position:absolute;
     left:0px;
     top:0px;
@@ -923,10 +923,10 @@ span.sheet-buff-mod {
     display:block;
     width:145px;
     float:right;
-    background:#DCDCDC;
+    background:#D3D3D3;
 }
 input[type=checkbox]:checked +.sheet-buff-name {
-    background:#333398;
+    background:#2dafeb;
     color:white;
 }
 .sheet-show-options,
@@ -1005,6 +1005,12 @@ input[type=checkbox]:checked +.sheet-buff-name {
     margin:0px;
     display:flex;
     justify-content:space-between;
+}
+.sheet-proficiency{
+    width:50%!important;
+}
+.sheet-weapon-cat{
+    width:40%!important;
 }
 .sheet-weapons .repcontrol {
     width:100%;
@@ -1276,11 +1282,11 @@ input[type=checkbox]:checked +.sheet-buff-name {
 }
 .sheet-encumbered:checked ~ .sheet-encumber {
     color:white !important;
-    background-color:#f86f1a;
+    background-color:#333398;
 }
 .sheet-overburdened:checked ~ .sheet-overburden {
     color:white !important;
-    background-color:#f86f1a;
+    background-color:#333398;
 }
 .sheet-mod-buff:checked ~ .sheet-modified-attr {
     color:#2dafeb;

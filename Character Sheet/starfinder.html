@@ -267,12 +267,12 @@
             <div class='buffs in-play'>
                 <fieldset class='repeating_buff'>
                     <div class='buff'>
-                        <input class="show-options" type="checkbox" name="attr_show-options" checked="checked"><span>y</span>
+                        <input class="show-options" type="checkbox" name="attr_show_options" checked="checked"><span>y</span>
                         <div class='buff-options'>
                             <input class='buff-name' type='text' name='attr_buff_name' placeholder='Haste'>
                             <div class='mod-container'>
                                 <span class='label buff-mod' data-i18n='mods'>MODS</span>
-                                <textarea class='buff-mod' type='text' name='attr_buff_mods'></textarea>
+                                <textarea class='buff-mod' name='attr_buff_mods' placeholder='+X to EAC, +X Luck to Will'></textarea>
                             </div>
                         </div>
                         <div class='display'>
@@ -588,7 +588,7 @@
                         <span class='label abi'></span>
                     </div>
                     <div class='skill-container'>
-                        <button class='acp' type='roll' name='roll_acrobatics' value='/w @{character_name} &{template:default} {{Acrobatics=[[1d20+@{acrobatics}]]}} {{@{character_name}}}' data-i18n='acrobatics' title='%{acrobatics}'>ACROBATICS</button>
+                        <button class='acp' type='roll' name='roll_acrobatics' value='/w @{character_name} &{template:default} {{Acrobatics=[[1d20+@{acrobatics}]]}} {{@{character_name}}}' data-i18n='acrobatics' title='%{acrobatics}'>ACROBATICS </button>
                         <input class='mod-debuff' type='radio' name='attr_acrobatics_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_acrobatics_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_acrobatics_change' value='1' hidden='true'>
@@ -608,7 +608,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button class='acp' type='roll' name='roll_athletics' value='/w @{character_name} &{template:default} {{Athletics=[[1d20+@{athletics}]]}} {{@{character_name}}}' data-i18n='athletics' title='%{athletics}'>ATHLETICS</button>
+                        <button class='acp' type='roll' name='roll_athletics' value='/w @{character_name} &{template:default} {{Athletics=[[1d20+@{athletics}]]}} {{@{character_name}}}' data-i18n='athletics' title='%{athletics}'>ATHLETICS </button>
                         <input class='mod-debuff' type='radio' name='attr_athletics_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_athletics_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_athletics_change' value='1' hidden='true'>
@@ -628,7 +628,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_bluff' value='/w @{character_name} &{template:default} {{Bluff=[[1d20+@{bluff}]]}} {{@{character_name}}}' data-i18n='bluff' title='%{bluff}'>BLUFF</button>
+                        <button type='roll' name='roll_bluff' value='/w @{character_name} &{template:default} {{Bluff=[[1d20+@{bluff}]]}} {{@{character_name}}}' data-i18n='bluff' title='%{bluff}'>BLUFF </button>
                         <input class='mod-debuff' type='radio' name='attr_bluff_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_bluff_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_bluff_change' value='1' hidden='true'>
@@ -648,7 +648,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_computers' value='/w @{character_name} &{template:default} {{Computers=[[1d20+@{computers}]]}} {{@{character_name}}}' data-i18n='computers' title='%{computers}'>COMPUTERS</button>
+                        <button type='roll' name='roll_computers' value='/w @{character_name} &{template:default} {{Computers=[[1d20+@{computers}]]}} {{@{character_name}}}' data-i18n='computers' title='%{computers}'>COMPUTERS </button>
                         <input class='mod-debuff' type='radio' name='attr_computers_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_computers_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_computers_change' value='1' hidden='true'>
@@ -668,7 +668,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_culture' value='/w @{character_name} &{template:default} {{Culture=[[1d20+@{Culture}]]}} {{@{character_name}}}' data-i18n='culture' title='%{culture}'>CULTURE</button>
+                        <button type='roll' name='roll_culture' value='/w @{character_name} &{template:default} {{Culture=[[1d20+@{Culture}]]}} {{@{character_name}}}' data-i18n='culture' title='%{culture}'>CULTURE </button>
                         <input class='mod-debuff' type='radio' name='attr_culture_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_culture_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_culture_change' value='1' hidden='true'>
@@ -688,7 +688,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_diplomacy' value='/w @{character_name} &{template:default} {{Diplomacy=[[1d20+@{Diplomacy}]]}} {{@{character_name}}}' data-i18n='diplomacy' title='%{diplomacy}'>DIPLOMACY</button>
+                        <button type='roll' name='roll_diplomacy' value='/w @{character_name} &{template:default} {{Diplomacy=[[1d20+@{Diplomacy}]]}} {{@{character_name}}}' data-i18n='diplomacy' title='%{diplomacy}'>DIPLOMACY </button>
                         <input class='mod-debuff' type='radio' name='attr_diplomacy_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_diplomacy_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_diplomacy_change' value='1' hidden='true'>
@@ -708,7 +708,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_disguise' value='/w @{character_name} &{template:default} {{Disguise=[[1d20+@{Disguise}]]}} {{@{character_name}}}' data-i18n='disguise' title='%{disguise}'>DISGUISE</button>
+                        <button type='roll' name='roll_disguise' value='/w @{character_name} &{template:default} {{Disguise=[[1d20+@{Disguise}]]}} {{@{character_name}}}' data-i18n='disguise' title='%{disguise}'>DISGUISE </button>
                         <input class='mod-debuff' type='radio' name='attr_disguise_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_disguise_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_disguise_change' value='1' hidden='true'>
@@ -728,7 +728,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_engineering' value='/w @{character_name} &{template:default} {{Engineering=[[1d20+@{Engineering}]]}} {{@{character_name}}}' data-i18n='engineering' title='%{engineering}'>ENGINEERING</button>
+                        <button type='roll' name='roll_engineering' value='/w @{character_name} &{template:default} {{Engineering=[[1d20+@{Engineering}]]}} {{@{character_name}}}' data-i18n='engineering' title='%{engineering}'>ENGINEERING </button>
                         <input class='mod-debuff' type='radio' name='attr_engineering_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_engineering_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_engineering_change' value='1' hidden='true'>
@@ -748,7 +748,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_intimidate' value='/w @{character_name} &{template:default} {{Intimidate=[[1d20+@{intimidate}]]}} {{@{character_name}}}' data-i18n='intimidate' title='%{intimidate}'>INTIMIDATE</button>
+                        <button type='roll' name='roll_intimidate' value='/w @{character_name} &{template:default} {{Intimidate=[[1d20+@{intimidate}]]}} {{@{character_name}}}' data-i18n='intimidate' title='%{intimidate}'>INTIMIDATE </button>
                         <input class='mod-debuff' type='radio' name='attr_intimidate_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_intimidate_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_intimidate_change' value='1' hidden='true'>
@@ -768,7 +768,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_life_science' value='/w @{character_name} &{template:default} {{Life Science=[[1d20+@{life_science}]]}} {{@{character_name}}}' data-i18n='life_science' title='%{life_science}'>LIFE SCIENCE</button>
+                        <button type='roll' name='roll_life_science' value='/w @{character_name} &{template:default} {{Life Science=[[1d20+@{life_science}]]}} {{@{character_name}}}' data-i18n='life_science' title='%{life_science}'>LIFE SCIENCE </button>
                         <input class='mod-debuff' type='radio' name='attr_life_science_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_life_science_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_life_science_change' value='1' hidden='true'>
@@ -788,7 +788,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_medicine' value='/w @{character_name} &{template:default} {{Medicine=[[1d20+@{Medicine}]]}} {{@{character_name}}}' data-i18n='medicine' title='%{medicine}'>MEDICINE</button>
+                        <button type='roll' name='roll_medicine' value='/w @{character_name} &{template:default} {{Medicine=[[1d20+@{Medicine}]]}} {{@{character_name}}}' data-i18n='medicine' title='%{medicine}'>MEDICINE </button>
                         <input class='mod-debuff' type='radio' name='attr_medicine_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_medicine_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_medicine_change' value='1' hidden='true'>
@@ -808,7 +808,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_mysticism' value='/w @{character_name} &{template:default} {{Mysticism=[[1d20+@{Mysticism}]]}} {{@{character_name}}}' data-i18n='mysticism' title='%{mysticism}'>MYSTICISM</button>
+                        <button type='roll' name='roll_mysticism' value='/w @{character_name} &{template:default} {{Mysticism=[[1d20+@{Mysticism}]]}} {{@{character_name}}}' data-i18n='mysticism' title='%{mysticism}'>MYSTICISM </button>
                         <input class='mod-debuff' type='radio' name='attr_mysticism_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_mysticism_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_mysticism_change' value='1' hidden='true'>
@@ -828,7 +828,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_perception' value='/w @{character_name} &{template:default} {{Perception=[[1d20+@{Perception}]]}} {{@{character_name}}}' data-i18n='perception' title='%{perception}'>PERCEPTION</button>
+                        <button type='roll' name='roll_perception' value='/w @{character_name} &{template:default} {{Perception=[[1d20+@{Perception}]]}} {{@{character_name}}}' data-i18n='perception' title='%{perception}'>PERCEPTION </button>
                         <input class='mod-debuff' type='radio' name='attr_perception_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_perception_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_perception_change' value='1' hidden='true'>
@@ -848,7 +848,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_physical_science' value='/w @{character_name} &{template:default} {{Physical Science=[[1d20+@{Physical_Science}]]}} {{@{character_name}}}' data-i18n='physical_science' title='%{physical_science}'>PHSYICAL SCIENCE</button>
+                        <button type='roll' name='roll_physical_science' value='/w @{character_name} &{template:default} {{Physical Science=[[1d20+@{Physical_Science}]]}} {{@{character_name}}}' data-i18n='physical_science' title='%{physical_science}'>PHSYICAL SCIENCE </button>
                         <input class='mod-debuff' type='radio' name='attr_physical_science_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_physical_science_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_physical_science_change' value='1' hidden='true'>
@@ -868,7 +868,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_piloting' value='/w @{character_name} &{template:default} {{Piloting=[[1d20+@{Piloting}]]}} {{@{character_name}}}' data-i18n='piloting' title='%{piloting}'>PILOTING</button>
+                        <button type='roll' name='roll_piloting' value='/w @{character_name} &{template:default} {{Piloting=[[1d20+@{Piloting}]]}} {{@{character_name}}}' data-i18n='piloting' title='%{piloting}'>PILOTING </button>
                         <input class='mod-debuff' type='radio' name='attr_piloting_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_piloting_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_piloting_change' value='1' hidden='true'>
@@ -891,13 +891,14 @@
                         <div class='profession-placeholder' data-i18n='profession_placeholder'>ADD PROFESSIONS HERE</div>
                         <fieldset class='repeating_profession'>
                             <div class='skill-container'>
-                                <button type='roll' name='roll_profession' value='@{profession_macro}' data-i18n='profession' title='%{repeating_profession_$X_profession_roll}'>PROFESSION</button>
+                                <button type='roll' name='roll_profession' value='@{profession_macro}' data-i18n='profession' title='%{repeating_profession_$X_profession_roll}'>PROFESSION </button>
                                 <input type='hidden' name='attr_profession_macro' value='/w @{character_name} &{template:default} {{@{profession_name}=[[1d20+@{profession}]]}} {{@{character_name}}}'>
                                 <input class='prof-name' type='text' name='attr_profession_name' placeholder='artist'>
                                 <input class='mod-debuff' type='radio' name='attr_profession_change' value='-1' hidden='true'>
                                 <input class='mod-normal' type='radio' name='attr_profession_change' value='0' hidden='true' checked='checked'>
                                 <input class='mod-buff' type='radio' name='attr_profession_change' value='1' hidden='true'>
-                                <input class='mod tot modified-attr' readonly='true' type='text' name='attr_profession' title='@{profession}' value='0'>
+                                <span class='mod tot modified-attr' readonly='true' type='text' name='attr_profession' title='@{profession}' value='0'>0</span>
+                                <input type='hidden' name='attr_profession' value='0'>
                                 <div class='arith'>=</div>
                                 <input class='ranks' type='number' name='attr_profession_ranks' value='' title='@{profession_ranks}'>
                                 <div class='arith'>+</div>
@@ -915,7 +916,7 @@
                         </fieldset>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_sense_motive' value='/w @{character_name} &{template:default} {{Sense Motive=[[1d20+@{Sense_Motive}]]}} {{@{character_name}}}' data-i18n='sense_motive' title='%{sense_motive}'>SENSE MOTIVE</button>
+                        <button type='roll' name='roll_sense_motive' value='/w @{character_name} &{template:default} {{Sense Motive=[[1d20+@{Sense_Motive}]]}} {{@{character_name}}}' data-i18n='sense_motive' title='%{sense_motive}'>SENSE MOTIVE </button>
                         <input class='mod-debuff' type='radio' name='attr_sense_motive_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_sense_motive_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_sense_motive_change' value='1' hidden='true'>
@@ -935,7 +936,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button class='acp' type='roll' name='roll_sleight_of_hand' value='/w @{character_name} &{template:default} {{Sleight of Hand=[[1d20+@{Sleight_of_Hand}]]}} {{@{character_name}}}' data-i18n='sleight_of_hand' title='%{sleight_of_hand}'>SLEIGHT OF HAND</button>
+                        <button class='acp' type='roll' name='roll_sleight_of_hand' value='/w @{character_name} &{template:default} {{Sleight of Hand=[[1d20+@{Sleight_of_Hand}]]}} {{@{character_name}}}' data-i18n='sleight_of_hand' title='%{sleight_of_hand}'>SLEIGHT OF HAND </button>
                         <input class='mod-debuff' type='radio' name='attr_sleight_of_hand_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_sleight_of_hand_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_sleight_of_hand_change' value='1' hidden='true'>
@@ -955,7 +956,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_stealth' value='/w @{character_name} &{template:default} {{Stealth=[[1d20+@{Stealth}]]}} {{@{character_name}}}' data-i18n='stealth' title='%{stealth}'>STEALTH</button>
+                        <button class='acp' type='roll' name='roll_stealth' value='/w @{character_name} &{template:default} {{Stealth=[[1d20+@{Stealth}]]}} {{@{character_name}}}' data-i18n='stealth' title='%{stealth}'>STEALTH </button>
                         <input class='mod-debuff' type='radio' name='attr_stealth_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_stealth_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_stealth_change' value='1' hidden='true'>
@@ -975,7 +976,7 @@
                         </select>
                     </div>
                     <div class='skill-container'>
-                        <button type='roll' name='roll_survival' value='/w @{character_name} &{template:default} {{Survival=[[1d20+@{Survival}]]}} {{@{character_name}}}' data-i18n='survival' title='%{survival}'>SURVIVAL</button>
+                        <button type='roll' name='roll_survival' value='/w @{character_name} &{template:default} {{Survival=[[1d20+@{Survival}]]}} {{@{character_name}}}' data-i18n='survival' title='%{survival}'>SURVIVAL </button>
                         <input class='mod-debuff' type='radio' name='attr_survival_change' value='-1' hidden='true'>
                         <input class='mod-normal' type='radio' name='attr_survival_change' value='0' hidden='true' checked='checked'>
                         <input class='mod-buff' type='radio' name='attr_survival_change' value='1' hidden='true'>
@@ -1011,7 +1012,7 @@
                     	    <input type='text' hidden='true' name='attr_attack_misc' value=''>
                     	    <input type='text' hidden='true' name='attr_attack_dmg_misc' value=''>
                     	    <!--Shown Attack Attributes -->
-                            <input class="show-options" type="checkbox" name="attr_show-options" checked="checked"><span>y</span>
+                            <input class="show-options" type="checkbox" name="attr_show_options" checked="checked"><span>y</span>
                             <div class='atk-options'>
                                 <div class='row'>
                                 	<span class='label' data-i18n='name-u'>NAME</span>
@@ -1019,16 +1020,26 @@
                                 	<span class='label' data-i18n='atk_level'>LVL</span>
                                 	<input class='atk-level' type='text' name='attr_attack_level' placeholder='1'>
                             	</div>
+                                <div class='row'>
+                                    <select class='label proficiency' name='attr_attack_proficiency'>
+                                        <option value='no' data-i18n='Not-Proficient'>NOT PROFICIENT</option>
+                                        <option value='yes' data-i18n='proficient' selected='selected'>PROFICIENT</option>
+                                        <option value='specialized' data-i18n='specialized'>SPECIALIZED</option>
+                                    </select>
+                                    <span class='label' data-i18n='category'>CATEGORY</span>
+                                    <input class='weapon-cat' type='text' name='attr_attack_category' placeholder='Longarm'>
+                                </div>
                             	<div class='row'>
                                     <span class='label' data-i18n='atk-u'>ATK</span>
                                 	<select class='label atk-ability abi' name='attr_attack_ability'>
-                                        <option value='+@{strength_mod}' selected='selected'>STR</option>
-                                        <option value='+@{dexterity_mod}'>DEX</option>
-                                        <option value='+@{constitution_mod}'>CON</option>
-                                        <option value='+@{intelligence_mod}'>INT</option>
-                                        <option value='+@{wisdom_mod}'>WIS</option>
-                                        <option value='+@{charisma_mod}'>CHA</option>
+                                        <option value='strength_mod' selected='selected'>STR</option>
+                                        <option value='dexterity_mod'>DEX</option>
+                                        <option value='constitution_mod'>CON</option>
+                                        <option value='intelligence_mod'>INT</option>
+                                        <option value='wisdom_mod'>WIS</option>
+                                        <option value='charisma_mod'>CHA</option>
                                     </select>
+                                    <input hidden='true' name='attr_attack_ability_value' value='0'>
                                     <span class='arith'>+</span>
                                     <input class='bab' name='attr_attack_bab' disabled='true' title='@{bab}' value='@{bab}'>
                                     <span class='arith'>+</span>
@@ -1041,13 +1052,14 @@
                                     <input class='dmg-dice' type='text' name=attr_attack_dmg_dice title='@{repeating_attack_$X_attack_dmg_dice}' placeholder='1d8'><span>+</span>
                                     <select class='label atk-ability abi' name='attr_attack_dmg_ability'>
                                         <option value='' selected='selected'>N/A</option>
-                                        <option value='+@{strength_mod}'>STR</option>
-                                        <option value='+@{dexterity_mod}'>DEX</option>
-                                        <option value='+@{constitution_mod}'>CON</option>
-                                        <option value='+@{intelligence_mod}'>INT</option>
-                                        <option value='+@{wisdom_mod}'>WIS</option>
-                                        <option value='+@{charisma_mod}'>CHA</option>
+                                        <option value='strength_mod'>STR</option>
+                                        <option value='dexterity_mod'>DEX</option>
+                                        <option value='constitution_mod'>CON</option>
+                                        <option value='intelligence_mod'>INT</option>
+                                        <option value='wisdom_mod'>WIS</option>
+                                        <option value='charisma_mod'>CHA</option>
                                     </select>
+                                    <input hidden='true' name='attr_attack_dmg_ability_value' value='0'>
                                     <span class='arith'>+</span>
                                     <input class='atk-damage' type='text' name='attr_attack_dmg_bonus' placeholder='@{attr}/2 + ?{Query}'>
                                 </div>
@@ -1065,7 +1077,7 @@
                                 </div>
                                 
                                 <div class='row'>
-                                    <textarea class='atk-description' name='attr_attack_macro' title='@{repeatin_attack_$X_attack_macro}' value='/w "@{character_name}" &{template:default} {{@{attack_name}}} {{@{character_name}}} {{attack=[[1d20+@{bab}[BAB]@{attack_ability}[ABILITY]@{attack_misc}@{attack_bonus} ]]}} {{Damage=[[@{attack_dmg_dice}@{attack_dmg_ability}@{attack_dmg_misc}@{attack_dmg_bonus}]]}}'>&{template:default} {{@{attack_name}}} {{@{character_name}}} {{attack=[[1d20+@{bab}[BAB]@{attack_ability}[ABILITY]@{attack_misc}@{attack_bonus} ]]}} {{Damage=[[@{attack_dmg_dice}@{attack_dmg_ability}@{attack_dmg_misc}@{attack_dmg_bonus}]]}}</textarea>
+                                    <textarea class='atk-description' name='attr_attack_macro' title='@{repeatin_attack_$X_attack_macro}' value='/w "@{character_name}" &{template:default} {{@{attack_name}}} {{@{character_name}}} {{attack=[[1d20+@{bab}[BAB]+@{attack_ability_value}[ABILITY]@{attack_misc}@{attack_bonus} ]]}} {{Damage=[[@{attack_dmg_dice}+@{attack_dmg_ability_value}[ABILITY]@{attack_dmg_misc}@{attack_dmg_bonus}]]}}'>/w "@{character_name}" &{template:default} {{@{attack_name}}} {{@{character_name}}} {{attack=[[1d20+@{bab}[BAB]+@{attack_ability_value}[ABILITY]@{attack_misc}@{attack_bonus} ]]}} {{Damage=[[@{attack_dmg_dice}+@{attack_dmg_ability_value}[ABILITY]@{attack_dmg_misc}@{attack_dmg_bonus}]]}}</textarea>
                                 </div>
                                 <div class='row'>
                                     <textarea class='atk-description' name='attr_attack_description' title='@{repeatin_attack_$X_atk_description}' placeholder='Description'></textarea>
@@ -1100,12 +1112,18 @@
                     </div>
                     <input class='encumbered' type='radio' name='attr_encumber_level' hidden='true' value='1'>
                     <div class='bulk-container encumber'>
-                        <input class='number' name=attr_encumber_bulk readonly='true' title='@{encumber_bulk}' value='5'>
+                        <input class='mod-debuff' type='radio' name='attr_encumber_bulk_change' value='-1' hidden='true'>
+                        <input class='mod-normal' type='radio' name='attr_encumber_bulk_change' value='0' hidden='true' checked='checked'>
+                        <input class='mod-buff' type='radio' name='attr_encumber_bulk_change' value='1' hidden='true'>
+                        <span class='number modified-attr' name=attr_encumber_bulk readonly='true' title='@{encumber_bulk}' value='5'>5</span>
                         <span class='label' data-i18n='encumbered'>ENCUMBERED</span>
                     </div>
                     <input class='overburdened' type='radio' name='attr_encumber_level' hidden='true' value='2'>
                     <div class='bulk-container overburden'>
-                        <input class='number' name='attr_overburden_bulk' readonly='true' title='@{overburden_bulk}' value='10'>
+                        <input class='mod-debuff' type='radio' name='attr_overburden_bulk_change' value='-1' hidden='true'>
+                        <input class='mod-normal' type='radio' name='attr_overburden_bulk_change' value='0' hidden='true' checked='checked'>
+                        <input class='mod-buff' type='radio' name='attr_overburden_bulk_change' value='1' hidden='true'>
+                        <span class='number modified-attr' name='attr_overburden_bulk' readonly='true' title='@{overburden_bulk}' value='10'>10</span>
                         <span class='label' data-i18n='overburdened'>OVERBURDENED</span>
                     </div>
                     <div class='credits-container credits'>
@@ -1120,7 +1138,7 @@
                         <div class="label item-name-col" data-i18n="item-name">ITEM NAME</div>
                         <fieldset class='repeating_item'>
                             <div class='item'>
-                                <input class="show-options" type="checkbox" name="attr_show-options" checked="checked"><span>y</span>
+                                <input class="show-options" type="checkbox" name="attr_show_options" checked="checked"><span>y</span>
                                 <div class='item-options'>
                                     <div class='row'>
                                         <span class='label' data-i18n='name-u'>NAME</span>
@@ -1139,9 +1157,9 @@
                                         <span class='label' data-i18n='item_quantity'>NUM</span>
                                         <input class='item-quantity' type='text' name='attr_item_quantity' placeholder='1'>
                                     </div>
-                                    <div class='row'>
-                                        <span class='label' data-i18n='mods'>MODS</span>
-                                        <input class='item-mods' type='text' name='attr_item_mods' placeholder='+X EAC, +X Luck to Will'>
+                                    <div class='row mod-container'>
+                                        <span class='label item-mods' data-i18n='mods'>MODS</span>
+                                        <textarea class='item-mods' type='text' name='attr_item_mods' placeholder='+X to EAC, +X Luck to Will'></textarea>
                                     </div>
                                     <div class='row'>
                                         <textarea class='item-description' name='attr_item_description' title='@{repeating_item_$X_item_description}' placeholder='Description'></textarea>
@@ -1156,13 +1174,12 @@
                 </div>
             </div>
     	</div>
-    	<input name='attr_nestattr' type='text' hidden='true' value='@{'>
     	<input name='attr_bab' type='text' hidden='true' readonly='true' value='0'>
         <input name='attr_level' type='text' hidden='true' readonly='true' value='0'>
     </div>
     <div class="container ship">
         
-    </div>
+    </div>'
 </div>
 <script type='text/worker'>
     /* ---- BEGIN: TheAaronSheet.js ---- */
@@ -1406,7 +1423,7 @@
         logCallstackSub = function(cs){
             var matches, csa;
             _.find(cs,function(line){
-                matches = line.match(/TAS_CALLSTACK_(\d+)/);
+                matches = line.match(/TAS_valueSTACK_(\d+)/);
                 if(matches){
                    csa=callstackRegistry[matches[1]];
                    logCSA( '===================='+(csa.label ? '> '+csa.label+' <' : '')+'====================');
@@ -1452,7 +1469,7 @@
     
                 /*jshint -W054 */
                 return new Function('cb','ctx','TASlog',
-                    "return function TAS_CALLSTACK_"+ctxref+"(){"+
+                    "return function TAS_valueSTACK_"+ctxref+"(){"+
                         "TASlog('Entering: '+(cb.name||'(anonymous function)'));"+
                         "cb.apply(ctx||{},arguments);"+
                         "TASlog('Exiting: '+(cb.name||'(anonymous function)'));"+
@@ -1815,173 +1832,337 @@
     /*start starfinder.js*/
     var starfinder = starfinder || (function(){
         'use strict';
-        var version = 0.011504803736,
-            attributeAffected={
-                'eac':{
+        var version = 0.011505149153,
+            attributeObjs=[
+                /*
+                {
+                    repeating:true/false,
+                    attr:'attribute_name',
+                    numAdds: integer,
+                    attrAdds: [],
+                    addlBonus: [],
+                    ability:'ability_attribute',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
+                },
+                */
+                {
                     repeating:false,
-                    total:'eac',
+                    attr:'initiative',
+                    numAdds: 0,
+                    attrAdds: [],
+                    ability:'initiative_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
+                },
+                /*{
+                    attr:'eac_armor',
+                    numAdds:0,
+                    attrAdds:[],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
+                },
+                {
+                    attr:'kac_armor',
+                    numAdds:0,
+                    attrAdds:[],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
+                },
+                {
+                    repeating:false,
+                    attr:'eac',
                     numAdds:10,
                     attrAdds:['eac_armor'],
-                    ability:'eac_ability'
+                    ability:'eac_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'kac':{
+                {
                     repeating:false,
-                    total:'kac',
+                    attr:'kac',
                     numAdds:10,
                     attrAdds:['kac_armor'],
-                    ability:'kac_ability'
-                },
-                'fort':{
+                    ability:'kac_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
+                },*/
+                {
                     repeating:false,
-                    total:'fort',
+                    attr:'fort',
+                    numAdds:0,
                     attrAdds:['fort_base'],
-                    ability:'fort_ability'
+                    ability:'fort_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'ref':{
+                {
                     repeating:false,
-                    total:'ref',
+                    attr:'ref',
+                    numAdds:0,
                     attrAdds:['ref_base'],
-                    ability:'ref_ability'
+                    ability:'ref_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'will':{
+                {
                     repeating:false,
-                    total:'will',
+                    attr:'will',
+                    numAdds:0,
                     attrAdds:['will_base'],
-                    ability:'will_ability'
+                    ability:'will_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'initiative':{
+                {
                     repeating:false,
-                    total:'initiative',
+                    attr:'initiative',
+                    numAdds:0,
                     attrAdds:[],
-                    ability:'initiative_ability'
+                    ability:'initiative_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'acrobatics':{
+                {
                     repeating:false,
-                    total:'acrobatics',
+                    attr:'acrobatics',
+                    numAdds:0,
                     attrAdds:['acrobatics_ranks','acrobatics_class_skill'],
-                    ability:'acrobatics_ability'
+                    ability:'acrobatics_ability',
+                    miscBonus:['acp'],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'athletics':{
+                {
                     repeating:false,
-                    total:'athletics',
+                    attr:'athletics',
+                    numAdds:0,
                     attrAdds:['athletics_ranks','athletics_class_skill'],
-                    ability:'athletics_ability'
+                    ability:'athletics_ability',
+                    miscBonus:['acp'],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'bluff':{
+                {
                     repeating:false,
-                    total:'bluff',
+                    attr:'bluff',
+                    numAdds:0,
                     attrAdds:['bluff_ranks','bluff_class_skill'],
-                    ability:'bluff_ability'
+                    ability:'bluff_ability',
+                    miscBonus:[],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'computers':{
+                {
                     repeating:false,
-                    total:'computers',
+                    attr:'computers',
+                    numAdds:0,
                     attrAdds:['computers_ranks','computers_class_skill'],
-                    ability:'computers_ability'
+                    ability:'computers_ability',
+                    miscBonus:[],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'culture':{
+                {
                     repeating:false,
-                    total:'culture',
+                    attr:'culture',
+                    numAdds:0,
                     attrAdds:['culture_ranks','culture_class_skill'],
-                    ability:'culture_ability'
+                    ability:'culture_ability',
+                    miscBonus:[],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'diplomacy':{
+                {
                     repeating:false,
-                    total:'diplomacy',
+                    attr:'diplomacy',
+                    numAdds:0,
                     attrAdds:['diplomacy_ranks','diplomacy_class_skill'],
-                    ability:'diplomacy_ability'
+                    ability:'diplomacy_ability',
+                    miscBonus:[],
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'engineering':{
+                {
                     repeating:false,
-                    total:'engineering',
+                    attr:'engineering',
+                    numAdds:0,
                     attrAdds:['engineering_ranks','engineering_class_skill'],
-                    ability:'engineering_ability'
+                    miscBonus:[],
+                    ability:'engineering_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'intimidate':{
+                {
                     repeating:false,
-                    total:'intimidate',
+                    attr:'intimidate',
+                    numAdds:0,
                     attrAdds:['intimidate_ranks','intimidate_class_skill'],
-                    ability:'intimidate_ability'
+                    miscBonus:[],
+                    ability:'intimidate_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'life_science':{
+                {
                     repeating:false,
-                    total:'life_science',
+                    attr:'life_science',
+                    numAdds:0,
                     attrAdds:['life_science_ranks','life_science_class_skill'],
-                    ability:'life_science_ability'
+                    miscBonus:[],
+                    ability:'life_science_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'medicine':{
+                {
                     repeating:false,
-                    total:'medicine',
+                    attr:'medicine',
+                    numAdds:0,
                     attrAdds:['medicine_ranks','medicine_class_skill'],
-                    ability:'medicine_ability'
+                    miscBonus:[],
+                    ability:'medicine_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'mysticism':{
+                {
                     repeating:false,
-                    total:'mysticism',
+                    attr:'mysticism',
+                    numAdds:0,
                     attrAdds:['mysticism_ranks','mysticism_class_skill'],
-                    ability:'mysticism_ability'
+                    miscBonus:[],
+                    ability:'mysticism_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'perception':{
+                {
                     repeating:false,
-                    total:'perception',
+                    attr:'perception',
+                    numAdds:0,
                     attrAdds:['perception_ranks','perception_class_skill'],
-                    ability:'perception_ability'
+                    miscBonus:[],
+                    ability:'perception_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'physical_science':{
+                {
                     repeating:false,
-                    total:'physical_science',
+                    attr:'physical_science',
+                    numAdds:0,
                     attrAdds:['physical_science_ranks','physical_science_class_skill'],
-                    ability:'physical_science_ability'
+                    miscBonus:[],
+                    ability:'physical_science_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'piloting':{
+                {
                     repeating:false,
-                    total:'piloting',
+                    attr:'piloting',
+                    numAdds:0,
                     attrAdds:['piloting_ranks','piloting_class_skill'],
-                    ability:'piloting_ability'
+                    miscBonus:[],
+                    ability:'piloting_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'profession':{
+                {
                     repeating:'profession',
-                    total:'profession',
+                    attr:'profession',
+                    numAdds:0,
                     repeatAdds:['profession_ranks','profession_class_skill'],
-                    ability:'profession_ability'
+                    miscBonus:[],
+                    ability:'profession_ability',
+                    repeatTextAdds:[],
+                    textAdds:[]
                 },
-                'sense_motive':{
+                {
                     repeating:false,
-                    total:'sense_motive',
+                    attr:'sense_motive',
+                    numAdds:0,
                     attrAdds:['sense_motive_ranks','sense_motive_class_skill'],
-                    ability:'sense_motive_ability'
+                    miscBonus:[],
+                    ability:'sense_motive_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'sleight_of_hand':{
+                {
                     repeating:false,
-                    total:'sleight_of_hand',
+                    attr:'sleight_of_hand',
+                    numAdds:0,
                     attrAdds:['sleight_of_hand_ranks','sleight_of_hand_class_skill'],
-                    ability:'sleight_of_hand_ability'
+                    miscBonus:['acp'],
+                    ability:'sleight_of_hand_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'stealth':{
+                {
                     repeating:false,
-                    total:'stealth',
+                    attr:'stealth',
+                    numAdds:0,
                     attrAdds:['stealth_ranks','stealth_class_skill'],
-                    ability:'stealth_ability'
+                    miscBonus:['acp'],
+                    ability:'stealth_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'survival':{
+                {
                     repeating:false,
-                    total:'survival',
+                    attr:'survival',
+                    numAdds:0,
                     attrAdds:['survival_ranks','survival_class_skill'],
-                    ability:'survival_ability'
+                    miscBonus:[],
+                    ability:'survival_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'attack_total':{
+                {
                     repeating:'attack',
-                    total:'attack_total',
+                    attr:'attack_total',
+                    numAdds:0,
                     attrAdds:['bab'],
-                    ability:'attack_ability'
+
+                    ability:'attack_ability',
+                    repeatTextAdds:[],
+                    repeatAdds:[],
+                    textAdds:[]
                 },
-                'attack_dmg_total':{
+                {
                     repeating:'attack',
-                    total:'attack_dmg_total',
+                    attr:'attack_dmg_total',
+                    numAdds:0,
                     repeatTextAdds:['attack_dmg_dice','attack_dmg_bonus','attack_dmg_misc'],
-                    ability:'attack_dmg_ability'
+
+                    ability:'attack_dmg_ability',
+                    repeatAdds:[],
+                    textAdds:[]
                 }
-            },
+            ],
             repeatingAttrAffected = {
                 'attack':{
                     'attack_total':'attack_ability',
@@ -2039,7 +2220,8 @@
                 },
                 {
                     section:'attack',
-                    fields:['attack_ability','attack_bonus','attack_dmg_dice','attack_dmg_ability','attack_dmg_bonus','attack_level','attack_bonus','attack_type','']
+                    fields:['attack_ability','attack_bonus','attack_dmg_dice','attack_dmg_ability','attack_dmg_bonus','attack_level','attack_bonus',
+                            'attack_type','attack_total','attack_dmg_total','attack_proficiency','attack_category']
                 },
                 {
                     section:'profession',
@@ -2080,116 +2262,19 @@
             +'change:sense_motive_class_skill change:sense_motive_ability change:sleight_of_hand_ranks change:sleight_of_hand_class_skill '
             +'change:sleight_of_hand_ability change:stealth_ranks change:stealth_class_skill change:stealth_ability change:survival_ranks '
             +'change:survival_class_skill change:survival_ability '
-            +'change:repeating_item change:repeating_attack change:repeating_profession change:repeating_buff',
+            +'change:repeating_item change:repeating_attack change:repeating_profession change:repeating_buff '
+            +'remove:repeating_item remove:repeating_buff',
             accessStarfinder);
-        },
-        SUM = function(numArr){
-            return _.reduce(numArr,(memo, n)=>{return memo + (n*1||n)},0);
-        },
-        
-        BUFFMAX = function (modArr){
-            return _.reduce(modArr,(memo,n)=>{return Math.max(memo,n)||memo+n});
         },
         
         accessStarfinder = function (event){
             var attribute = event.sourceAttribute.replace(/repeating_[^_]+_-[^_]+_/,''),
                 repeatSec = event.sourceAttribute.match(/repeating_([^_]+)/) ? event.sourceAttribute.match(/repeating_([^_]+)/)[1] : false,
-                id = event.sourceAttribute.match(/repeating_[^_]+_(\-[^_]+)/),
                 cloneRepAttr = JSON.parse(JSON.stringify(repeatingAttributes)),
                 sectionAggregate = [],
                 currSection,
                 attributes=[],
-                setObj,bonuses,
-                eventSwitch = {
-                    'class-1-name':classNameHandler,'class-2-name':classNameHandler,'class-3-name':classNameHandler,'class-4-name':classNameHandler,'class-5-name':classNameHandler,
-                    'class-1-level':classLevelHandler,'class-2-level':classLevelHandler,'class-3-level':classLevelHandler,'class-4-level':classLevelHandler,'class-5-level':classLevelHandler,
-                    'class-1-sp':classHealthHandler,'class-2-sp':classHealthHandler,'class-3-sp':classHealthHandler,'class-4-sp':classHealthHandler,'class-5-sp':classHealthHandler,
-                    'class-1-hp':classHealthHandler,'class-2-hp':classHealthHandler,'class-3-hp':classHealthHandler,'class-4-hp':classHealthHandler,'class-5-hp':classHealthHandler,
-                    'class-1-bab':classBabHandler,'class-2-bab':classBabHandler,'class-3-bab':classBabHandler,'class-4-bab':classBabHandler,'class-5-bab':classBabHandler,
-                    'class-1-fort':classSaveHandler,'class-2-fort':classSaveHandler,'class-3-fort':classSaveHandler,'class-4-fort':classSaveHandler,
-                    'class-5-fort':classSaveHandler,'class-1-ref':classSaveHandler,'class-2-ref':classSaveHandler,'class-3-ref':classSaveHandler,'class-4-ref':classSaveHandler,
-                    'class-5-ref':classSaveHandler,'class-1-will':classSaveHandler,'class-2-will':classSaveHandler,'class-3-will':classSaveHandler,'class-4-will':classSaveHandler,
-                    'class-5-will':classSaveHandler,
-                    'class-1-skills':classSkillHandler,'class-2-skills':classSkillHandler,'class-3-skills':classSkillHandler,'class-4-skills':classSkillHandler,
-                    'class-5-skills':classSkillHandler,
-                    'class-1-ability':classAbilityHandler,'class-2-ability':classAbilityHandler,'class-3-ability':classAbilityHandler,'class-4-ability':classAbilityHandler,
-                    'class-5-ability':classAbilityHandler,
-                    'race_hp':classHealthHandler,
-                    'strength_base':attributeHandler,'strength_enhance':attributeHandler,'strength_penalty':attributeHandler,'strength_drain':attributeHandler,
-                    'dexterity_base':attributeHandler,'dexterity_enhance':attributeHandler,'dexterity_penalty':attributeHandler,'dexterity_drain':attributeHandler,
-                    'constitution_base':attributeHandler,'constitution_enhance':attributeHandler,'constitution_penalty':attributeHandler,'constitution_drain':attributeHandler,
-                    'intelligence_base':attributeHandler,'intelligence_enhance':attributeHandler,'intelligence_penalty':attributeHandler,'intelligence_drain':attributeHandler,
-                    'wisdom_base':attributeHandler,'wisdom_enhance':attributeHandler,'wisdom_penalty':attributeHandler,'wisdom_drain':attributeHandler,
-                    'charisma_base':attributeHandler,'charisma_enhance':attributeHandler,'charisma_penalty':attributeHandler,'charisma_drain':attributeHandler,
-                    'eac_ability':acHandler,'kac_ability':acHandler,
-                    'fort_ability':saveHandler,'ref_ability':saveHandler,'will_ability':saveHandler,
-                    'initiative_ability':initiativeHandler,
-                    'sp':healthHandler,'hp':healthHandler,'rp':healthHandler,
-                    'acrobatics_ranks':skillHandler,
-                    'acrobatics_class_skill':skillHandler,
-                    'acrobatics_ability':skillHandler,
-                    'athletics_ranks':skillHandler,
-                    'athletics_class_skill':skillHandler,
-                    'athletics_ability':skillHandler,
-                    'bluff_ranks':skillHandler,
-                    'bluff_class_skill':skillHandler,
-                    'bluff_ability':skillHandler,
-                    'computers_ranks':skillHandler,
-                    'computers_class_skill':skillHandler,
-                    'computers_ability':skillHandler,
-                    'culture_ranks':skillHandler,
-                    'culture_class_skill':skillHandler,
-                    'culture_ability':skillHandler,
-                    'diplomacy_ranks':skillHandler,
-                    'diplomacy_class_skill':skillHandler,
-                    'diplomacy_ability':skillHandler,
-                    'disguise_ranks':skillHandler,
-                    'disguise_class_skill':skillHandler,
-                    'disguise_ability':skillHandler,
-                    'engineering_ranks':skillHandler,
-                    'engineering_class_skill':skillHandler,
-                    'engineering_ability':skillHandler,
-                    'intimidate_ranks':skillHandler,
-                    'intimidate_class_skill':skillHandler,
-                    'intimidate_ability':skillHandler,
-                    'life_science_ranks':skillHandler,
-                    'life_science_class_skill':skillHandler,
-                    'life_science_ability':skillHandler,
-                    'medicine_ranks':skillHandler,
-                    'medicine_class_skill':skillHandler,
-                    'medicine_ability':skillHandler,
-                    'mysticism_ranks':skillHandler,
-                    'mysticism_class_skill':skillHandler,
-                    'mysticism_ability':skillHandler,
-                    'perception_ranks':skillHandler,
-                    'perception_class_skill':skillHandler,
-                    'perception_ability':skillHandler,
-                    'physical_science_ranks':skillHandler,
-                    'physical_science_class_skill':skillHandler,
-                    'physical_science_ability':skillHandler,
-                    'piloting_ranks':skillHandler,
-                    'piloting_class_skill':skillHandler,
-                    'piloting_ability':skillHandler,
-                    'profession_ranks':skillHandler,
-                    'profession_class_skill':skillHandler,
-                    'profession_ability':skillHandler,
-                    'sense_motive_ranks':skillHandler,
-                    'sense_motive_class_skill':skillHandler,
-                    'sense_motive_ability':skillHandler,
-                    'sleight_of_hand_ranks':skillHandler,
-                    'sleight_of_hand_class_skill':skillHandler,
-                    'sleight_of_hand_ability':skillHandler,
-                    'stealth_ranks':skillHandler,
-                    'stealth_class_skill':skillHandler,
-                    'stealth_ability':skillHandler,
-                    'survival_ranks':skillHandler,
-                    'survival_class_skill':skillHandler,
-                    'survival_ability':skillHandler,
-                    'profession':skillHandler,
-                    'item':equipmentHandler,
-                    'attack':attackHandler,
-                    'buff':buffHandler
-                },
+                bonuses,setObj,
                 getID = () => {
                     currSection=cloneRepAttr.shift();
                     getSectionIDs('repeating_'+currSection.section,(itemIDArr)=>{
@@ -2215,22 +2300,56 @@
                     });
                     attributes = attributes.concat(sheetAttributes);
                     getAttrs(attributes,(objs)=>{
-                        bonuses=parseBuffs(objs);
-                        setObj=eventSwitch[repeatSec || attribute](objs,bonuses,attribute,id);
-                        setAttrs(setObj,{silent:true});
+                        if(attribute.match(/^(?:rp|hp|sp)$/)){
+                            healthHandler(objs);
+                        }else{
+                            setObj = attribute.match(/class-/) ? classHandler(objs,attribute) : {};
+                            if(setObj){
+                                bonuses=parseBuffs(objs);
+                                applyBuffs(objs,bonuses,setObj);
+                            }
+                        }
+                        //setAttrs(setObj,{silent:true});
                     });
                 };
+            if(attribute.match(/show_options/)){
+                return;
+            }
             if(attribute==='tab_select'){
                 getAttrs(['tab_select'],(objs)=>{
                     setAttrs({tab:objs.tab_select},{silent:true});
                 });
             }else{
-                if(id){
-                    id=id[1];
-                }
                 getID();
             }
         },
+        
+        healthHandler = function(attributes){
+            var setObj = _.reduce(['sp','hp','rp'],(memo,h)=>{
+                memo.health_status+=(attributes[h]*1 <= 0 ? 1 : 0);
+                return memo;
+            },{health_status:0});
+            setAttrs(setObj,{silent:true});
+            return undefined;
+        },
+        
+        classHandler = function(attributes,attribute){
+            var classVar = attribute.replace(/class\-\d\-/,''),
+                varSwitch = {
+                    name:classNameHandler,
+                    level:classLevelHandler,
+                    sp:classHealthHandler,
+                    hp:classHealthHandler,
+                    ability:classHealthHandler,
+                    bab:classBABHandler,
+                    fort:classSaveHandler,
+                    ref:classSaveHandler,
+                    will:classSaveHandler
+                };
+            
+            return varSwitch[classVar](attributes,classVar);
+        },
+        
         //class attribute handling functions
         classNameHandler = function(attributes){
             var temp,
@@ -2239,11 +2358,52 @@
                     memo+=temp.length>0 ? (memo.length>0 ? ' / ' : '')+temp : '';
                     return memo;
                 },'');
-                return {'class&level':classNL};
+                setAttrs({'class&level':classNL},{silent:true});
+                return undefined;
+        },
+        
+        classLevelHandler = function(attributes){
+            var convertSave = {
+                    poor:(lvl)=>Math.floor(lvl/3),
+                    good:(lvl)=>lvl>0 ? (Math.floor(lvl/2) + 2) : 0
+                };
+            return _.reduce([1,2,3,4,5],(memo,n)=>{
+                memo.level+=(attributes['class-'+n+'-level']*1||0);
+                memo.bab+=Math.floor(attributes['class-'+n+'-bab']*attributes['class-'+n+'-level']||0);
+                _.each(['fort','ref','will'],(save)=>{
+                    memo[save+'_base']+=convertSave[attributes['class-'+n+'-'+save]](attributes['class-'+n+'-level']*1||0);
+                });
+                return memo;
+            },{level:0,fort_base:0,ref_base:0,will_base:0,bab:0});
+        },
+        
+        classHealthHandler = function(){
+            return {};
+        },
+        
+        classBABHandler = function(attributes){
+            return _.reduce([1,2,3,4,5],(memo,n)=>{
+                memo.bab+=Math.floor(attributes['class-'+n+'-bab']*attributes['class-'+n+'-level']||0);
+                return memo;
+            },{bab:0});
+        },
+        
+        classSaveHandler = function(attributes,save){
+            var convertSave = {
+                    poor:(lvl)=>Math.floor(lvl/3),
+                    good:(lvl)=>lvl>0 ? (Math.floor(lvl/2) + 2) : 0
+                },
+                memObj={};
+                
+            memObj[save+'_base']=0;
+            return _.reduce([1,2,3,4,5],(memo,n)=>{
+                memo[save+'_base']+=convertSave[attributes['class-'+n+'-'+save]](attributes['class-'+n+'-level']*1||0);
+                return memo;
+            },memObj);
         },
         
         parseBuffs = function(attributes){
-            var modRegex = /((?:\+|\-).*?(?=(?:\s+[^\s]+)?\s+to\s+))(?:\s+([^\s]+))?\s+to\s+(.+)/i,
+            var modRegex = /((?:\+|\-)?.*?(?=(?:\s+max dex|\s+[^\s]+)?\s+to\s+))(?:\s+(max dex|[^\s]+))?\s+to\s+(.+)/i,
                 buffSplit,buffMatch,buff,buffType,buffed,evalBuff,
                 buffFields = _.chain(_.keys(attributes))
                     .filter((k)=>{
@@ -2264,349 +2424,119 @@
                     .reduce((memo,f)=>{
                         buffMatch = f.match(modRegex);
                         if(buffMatch){
-                            buff = buffMatch[1].replace(/(floor|ceil|abs|round|abs)\(/,'Math.$1(').replace(/@{([^}]+)}/,(match,p1)=>{
-                                return attributes[p1.toLowerCase()]||'@{'+p1+'}';
+                            buff = buffMatch[1].toLowerCase();
+                            buffed = buffMatch[3].toLowerCase().split(/\s*and\s*/);
+                            buffType = buffMatch[2] ? buffMatch[2].toLowerCase().replace(/max dex/i,'max_dex') : 'untyped';
+                            _.each(buffed,(b)=>{
+                                b=b.replace(/\s+/,'_');
+                                if(b.match(/^armor$/i)){
+                                    memo.eac=memo.eac||{};
+                                    memo.eac[buffType]=memo.eac[buffType]||[];
+                                    memo.eac[buffType].push(buff);
+                                    memo.kac=memo.eac||{};
+                                    memo.kac[buffType]=memo.kac[buffType]||[];
+                                    memo.kac[buffType].push(buff);
+                                }else if(b.match(/^skills?$/i)){
+                                    
+                                }else{
+                                    memo[b]=memo[buffed]||{};
+                                    memo[b][buffType]=memo[b][buffType]||[];
+                                    memo[b][buffType].push(buff);
+                                }
                             });
-                            try{
-                                evalBuff = eval(buff);
-                            }catch(err){
-                                evalBuff = buff;
-                            }
-                            buffed = buffMatch[3].toLowerCase();
-                            buffType = buffMatch[2] ? buffMatch[2].toLowerCase() : 'untyped';
-                            memo[buffed]=memo[buffed]||{};
-                            memo[buffed][buffType]=memo[buffed][buffType]||{buff:[],penalty:0,misc:''};
-                            if(evalBuff > 0){
-                                memo[buffed][buffType].buff.push(evalBuff);
-                            }else if(evalBuff < 0){
-                                memo[buffed][buffType].penalty+= evalBuff;
-                            }else{
-                                memo[buffed][buffType].misc+=evalBuff;
-                            }
                         }
                         return memo;
                     },{})
-                    .each((attr)=>{
-                        _.each(_.keys(attr),(k)=>{
-                            if(k==='untyped' || k==='circumstance'){
-                                attr[k].total=(SUM(attr[k].buff)+(attr[k].penalty||0));
-                            }else {
-                                attr[k].total=BUFFMAX(attr[k].buff)+attr[k].penalty||0;
-                            }
-                        });
-                    })
                     .value();
-            _.each(_.keys(buffFields),(b)=>{
-                buffFields[b] = _.reduce(_.keys(buffFields[b]),(memo,f)=>{
-                    if(f==='armor' && b.match(/eac|kac/)){
-                        memo.armor+=buffFields[b][f].total;
-                    }else{
-                        memo.total+=buffFields[b][f].total||0;
-                        memo.misc+=buffFields[b][f].misc||'';
-                    }
-                    return memo;
-                },{total:0,misc:'',armor:0,acp:0});
-            });
-            buffFields.eac_armor = buffFields.eac_armor || {armor:0,total:0};
-            buffFields.kac_armor = buffFields.kac_armor || {armor:0,total:0};
-            if(buffFields.eac){
-                buffFields.eac_armor.armor = Math.max(buffFields.eac.armor,buffFields.eac_armor.armor);
-            }
-            if(buffFields.kac){
-                buffFields.kac_armor.armor = Math.max(buffFields.kac.armor,buffFields.kac_armor.armor);
-            }
             return buffFields;
         },
         
-        classLevelHandler = function(attributes,bonus){
-            var convertSave = {
-                    'poor':(lvl)=>Math.floor(lvl/3),
-                    'good':(lvl)=>lvl>0 ? (Math.floor(lvl/2) + 2) : 0
-                },
-                temp,
-                rpAbilities = [];
-            return _.reduce([1,2,3,4,5],(memo,n)=>{
-                    temp=(attributes['class-'+n+'-name']||'')+((attributes['class-'+n+'-name']&&attributes['class-'+n+'-name']!==''&&attributes['class-'+n+'-level']&&attributes['class-'+n+'-level']!=='') ? ' ' : '')+(attributes['class-'+n+'-level']||'');
-                    //class name/level handling
-                    memo['class&level']+=temp.length>0 ? (memo['class&level'].length>0 ? ' / ' : '')+temp : '';
-                    //level handling
-                    memo.level+=(attributes['class-'+n+'-level']*1||0);
-                    //save handling
-                    _.each(['fort','ref','will'],(s)=>{
-                        memo[s+'_base']+=convertSave[attributes['class-'+n+'-'+s]](attributes['class-'+n+'-level']*1||0);
+        starfinderMax = function(){
+            if(arguments[0]===true){
+                return _.min(_.rest(arguments));
+            }else{
+                return _.max(_.rest(arguments));
+            }
+        },
+        
+        //needs handling for armor/acp
+        calcBuffs = function(attributes,bonus,setObj){
+            var tObj,evalBuff;
+            return _.reduce(_.keys(bonus),(memo,t)=>{
+                tObj = _.reduce(bonus[t],(m,b)=>{
+                    evalBuff=b.replace(/(floor|ceil|abs|round|abs)\(/,'Math.$1(').replace(/@{([^}]+)}/,(match,p1)=>{
+                        return setObj[p1.toLowerCase()]*1 || attributes[p1.toLowerCase()]*1||'@{'+p1+'}';
                     });
-                    
-                    //bab handling
-                    memo.bab+=Math.floor(attributes['class-'+n+'-bab']*attributes['class-'+n+'-level']);
-                    //health handling
-                    memo.hp_max+=attributes['class-'+n+'-hp']*attributes['class-'+n+'-level'];
-                    memo.sp_max+=attributes['class-'+n+'-sp']*attributes['class-'+n+'-level'];
-                    if(attributes['class-'+n+'-level']*1>0){
-                        rpAbilities.push(attributes[attributes['class-'+n+'-ability']]*1);
-                    }
-                    //Apply bonuses and total aggregate attributes
-                    if(n===5){
-                        _.each(['fort','ref','will'],(s)=>{
-                            memo[s+'_base']+=(bonus[s+'_base'] ? (bonus[s+'_base'].total) : 0);
-                            memo[s]+=(memo[s+'_base']*1||0)+(bonus[s] ? (bonus[s].total) : 0)+attributes[attributes[s+'_ability']]*1;
-                        });
-                        memo['hp_max']+=attributes['race_hp']*1+(bonus['hp'] ? (bonus['hp'].total) : 0)+(bonus['hp_max'] ? (bonus['hp_max'].total) : 0);
-                        memo['rp_max']=Math.max(Math.max(Math.floor(memo.level/2),1)+_.max(rpAbilities),1)+(bonus['rp'] ? (bonus['rp'].total) : 0)+(bonus['rp_max'] ? (bonus['rp_max'].total) : 0);
-                        memo['sp_max']+=(bonus.sp ? (bonus['sp'].total) : 0)+(bonus.sp_max ? (bonus['sp_max'].total) : 0);
-                        _.each(['hp','sp','rp'],(h)=>{
-                            let diff = memo[h+'_max']-attributes[h+'_max']*1;
-                            memo[h] = Math.max(memo[h]+diff,0);
-                        });
-                        
-                    }
-                    return memo;
-                },{'class&level':'',level:0,hp_max:0,hp:attributes.hp*1,sp_max:0,sp:attributes.sp*1,rp_max:0,rp:attributes.rp*1,fort_base:0,ref_base:0,will_base:0,fort:0,ref:0,will:0,bab:0});
-        },
-        
-        classHealthHandler = function(attributes,bonus,changed){
-            var healthType = changed.replace(/class\-\d\-|race_/,''),
-                cmemo={};
-                
-            cmemo[healthType]=attributes[healthType]*1;
-            cmemo[healthType+'_max']=0;
-            return _.reduce([1,2,3,4,5],(memo,n)=>{
-                memo[healthType+'_max']+=attributes['class-'+n+'-'+healthType]*attributes['class-'+n+'-level'];
-                if(n===5){
-                    memo[healthType+'_max']+=(bonus[healthType+'_max'] ? (bonus[healthType+'_max'].total) : 0)+(bonus[healthType] ? (bonus[healthType].total) : 0)+(healthType==='hp' ? attributes['race_hp']*1 : 0);
-                    let diff = memo[healthType+'_max']-attributes[healthType+'_max']*1;
-                    memo[healthType]= Math.max(memo[healthType]+diff,0);
-                }
-                return memo;
-            },cmemo);
-        },
-        
-        classBabHandler = function(attributes,bonus){
-            return _.reduce([1,2,3,4,5],(memo,n)=>{
-                memo.bab+=Math.floor(attributes['class-'+n+'-bab']*attributes['class-'+n+'-level']);
-                if(n==5){
-                    memo.bab+=(bonus.bab ? (bonus.bab.total) : 0);
-                }
-                return memo;
-            },{bab:0});
-        },
-        
-        classSaveHandler = function(attributes,bonus,changed){
-            var saveType = changed.replace(/class\-\d\-/,''),
-                cmemo={},
-                convertSave = {
-                    'poor':(lvl)=>Math.floor(lvl/3),
-                    'good':(lvl)=>lvl>0 ? (Math.floor(lvl/2) + 2) : 0
-                };
-                
-            cmemo[saveType]=0;
-            cmemo[saveType+'_base']=0;
-            return _.reduce([1,2,3,4,5],(memo,n)=>{
-                memo[saveType+'_base']+=convertSave[attributes['class-'+n+'-'+saveType]](attributes['class-'+n+'-level']);
-                if(n===5){
-                    memo[saveType+'_base']+=(bonus[saveType+'_base'] ? (bonus[saveType+'_base'].total) : 0);
-                    memo[saveType]=memo[saveType+'_base']+attributes[attributes[saveType+'_ability']]*1+(bonus[saveType] ? (bonus[saveType].total) : 0);
-                }
-                return memo;
-            },cmemo);
-        },
-        
-        classSkillHandler = function(attributes,bonus){
-            
-        },
-        
-        classAbilityHandler = function(attributes,bonus){
-            var rpAbilities=[];
-            return _.reduce([1,2,3,4,5],(memo,n)=>{
-                if(attributes['class-'+n+'-level']>0){
-                    rpAbilities.push(attributes[attributes['class-'+n+'-ability']]*1);
-                }
-                if(n===5){
-                    memo.rp_max=Math.max(Math.max(Math.floor(attributes.level/2),1)+_.max(rpAbilities),1)+(bonus.rp ? (bonus.rp.total) : 0)+(bonus.rp_max ? (bonus.rp_max.total) : 0);
-                    let diff = memo.rp_max-attributes.rp_max*1;
-                    memo.rp = Math.max(memo.rp+diff,0);
-                }
-                return memo;
-            },{rp:attributes.rp*1,rp_max:0})
-        },
-        //End Class attribute handling functions
-        
-        //Sheet Section Handling Functions
-        attributeHandler = function(attributes,bonus,changed){
-            var attribute = changed.replace(/_(?:drain|penalty|base)/,''),
-                setObj = {},
-                attrKeys = _.keys(attributes),
-                mainStats = _.reduce(attrKeys,(memo,k)=>{
-                    if(k.match(/class\-\d\-ability/) && attributes[k.replace(/ability/,'level')]*1>0){
-                        memo.push(attributes[k]);
-                    }
-                    return memo;
-                },[]),
-                sectionAttributes,IDs;
-                
-            setObj[attribute]=(attributes[attribute+'_base']*1||10)-(attributes[attribute+'_drain']*1||0)+(bonus[attribute] ? (bonus[attribute].total) : 0);
-            setObj[attribute+'_mod']=Math.floor((setObj[attribute] - 10)/2)-Math.floor((attributes[attribute+'_penalty']||0)/2);
-            if(attribute==='strength'){
-                setObj.encumber_bulk=Math.floor(setObj[attribute]/2);
-                setObj.overburden_bulk=setObj[attribute];
-            }else if(attribute==='constitution'){
-                setObj.sp_max = _.reduce([1,2,3,4,5],(memo,n)=>{
-                    return memo + (attributes['class-'+n+'-sp']*attributes['class-'+n+'-level']||0)+(setObj['constitution_mod']*attributes['class-'+n+'-level']||0);
-                },0);
-                setObj.sp_max+=(bonus.sp ? (bonus.sp.total) : 0)+(bonus.sp_max ? (bonus.sp_max.total) : 0);
-                setObj.sp = Math.max(attributes.sp*1+(setObj.sp_max - attributes.sp_max*1),0);
-            }
-            if(setObj[attribute+'_mod']!==attributes[attribute+'_mod']*1){
-                setObj=_.reduce(attributeAffected,(memo,a)=>{
-                    if(a.repeating){
-                        sectionAttributes = _.filter(_.keys(attributes),(attr)=>{
-                            return attr.match(new RegExp('repeating_'+a.repeating));
-                        });
-                        IDs = _.chain(sectionAttributes)
-                            .map((attr)=>{
-                                return attr.match(/-[^_]+/)[0];
-                            })
-                            .unique()
-                            .value();
-                        _.each(IDs,(i)=>{
-                            if(attributes['repeating_'+a.repeating+'_'+i+'_'+a.ability]){
-                                if(attributes['repeating_'+a.repeating+'_'+i+'_'+a.ability].replace(/\+@{|}/g,'')===attribute+'_mod'){
-                                    memo['repeating_'+a.repeating+'_'+i+'_'+a.total]=(a.repeatTextAdds ? _.reduce(a.repeatTextAdds,(m,adds)=>{
-                                        return m + attributes['repeating_'+a.repeating+'_'+i+'_'+adds]+'+';
-                                    },'') : 0)
-                                    +(memo[attribute+'_mod']+_.reduce(a.repeatAdds,(m,adds)=>{
-                                        return m + (attributes['repeating_'+a.repeating+'_'+i+'_'+adds]*1||0);
-                                    },0)+_.reduce(a.attrAdds,(m,adds)=>{
-                                        return m + (attributes[adds]*1||0);
-                                    },0)+(a.numAdds||0)+(bonus[a.total] ? (bonus[a.total].total) : 0));
-                                }
+                    try{
+                        evalBuff=eval(evalBuff);
+                        if(evalBuff>0){
+                            if(t==='armor'){
+                                m.armor=starfinderMax(false,m.armor,evalBuff);
+                            }else if(t.match(/untyped|circumstance/)){
+                                m.buff+=evalBuff;
+                            }else if(t==='max_dex'){
+                                m.max_dex=starfinderMax(true,m.max_dex,evalBuff);
+                            }else{
+                                m.buff=starfinderMax(false,m.buff,evalBuff);
                             }
-                        });
-                    }else if(attributes[a.ability]){
-                        if(attributes[a.ability].replace(/\+@{|}/g,'')===attribute+'_mod'){
-                            memo[a.total]=memo[attribute+'_mod']+_.reduce(a.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0)+(a.numAdds||0)+(bonus[a.total] ? (bonus[a.total].total) : 0);
-                            if(a.total==='kac'){
-                                memo.cmd=memo.kac + 8;
-                            }
+                        }else if(evalBuff<0){
+                            m.pen+=evalBuff;
                         }
+                    }catch(err){
+                        m.misc+=b;
                     }
-                    return memo;
-                },setObj);
-                //RP handling
-                setObj.rp_max=_.reduce(mainStats,(memo,s)=>{
-                    return Math.max(memo,Math.max(1,Math.max(Math.floor(attributes.level/2),1)+(setObj[s]||attributes[s])*1));
-                },1);
-                setObj.rp=(attributes.rp*1||0)+setObj.rp_max-(attributes.rp_max*1||0);
-            }
-            return setObj;
-        },
-        
-        healthHandler = function(attributes){
-            return _.reduce(['sp','hp','rp'],(memo,h)=>{
-                memo.health_status+=(attributes[h]*1 <= 0 ? 1 : 0);
-                return memo;
-            },{health_status:0})
-        },
-        
-        acHandler = function(attributes,bonus,changed){
-            var ac = changed.replace(/_ability/,''),
-                setObj = {};
-            
-            setObj[ac+'_armor']=bonus[ac+'_armor'].armor + bonus[ac+'_armor'].total;
-            setObj[ac]=10+attributes[attributes[ac+'_ability']]*1+(setObj[ac+'_armor']*1||0)+(bonus[ac] ? (bonus[ac].total) : 0);
-            if(ac==='kac'){
-                setObj.cmd=8+setObj[ac]+(bonus.cmd ? (bonus.cmd.total) : 0);
-            }
-            return setObj;
-        },
-        
-        saveHandler = function(attributes,bonus,changed){
-            var save = changed.replace(/_ability/,''),
-                setObj = {};
-            
-            setObj[save]=attributes[attributes[save+'_ability']]*1+attributes[save+'_base']*1+(bonus[save] ? (bonus[save].total) : 0);
-            return setObj;
-        },
-        
-        initiativeHandler = function(attributes,bonus){
-            var setObj = {};
-            setObj.initiative=attributes[attributes.initiative_ability]*1 +(bonus.initiative ? (bonus.initiative.total) : 0);
-        },
-        
-        skillHandler = function(attributes,bonus,changed,id){
-            var skill = changed.replace(/_(?:ranks|ability|class_skill|name)/,''),
-                setObj={},
-                repeatAdd=id ? 'repeating_profession_'+id+'_' : '',
-                bTotal = (bonus[skill] ? (bonus[skill].total) : 0) + (skill.match(/acrobatics|athletics|sleight/)&&bonus.acp ? bonus.acp.total : 0);
-                
-            setObj[repeatAdd+skill]=(attributes[repeatAdd+skill+'_ranks']*1||0)+(attributes[repeatAdd+skill+'_ranks']*1 > 0 ? (attributes[repeatAdd+skill+'_class_skill']*1||0) : 0)+(attributes[attributes[repeatAdd+skill+'_ability']]*1||0)+bTotal;
-            setObj[repeatAdd+skill+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
-            return setObj;
-        },
-        
-        attackHandler = function(attributes,bonus,changed,id){
-            var setObj={},
-                a=attributeAffected.attack_total,
-                admg=attributeAffected.attack_dmg_total;
-                
-            setObj['repeating_attack_'+id+'_attack_misc']=(bonus.attack_total ? '+'+bonus.attack_total.total||'' + bonus.attack_total.misc||'' : '');
-            setObj['repeating_attack_'+id+'_attack_dmg_misc']=bonus.attack_dmg_total ? '+'+bonus.attack_dmg_total.total||'' + bonus.attack_dmg_total.misc||'' : '';
-            setObj['repeating_attack_'+id+'_attack_total']=(attributes[attributes['repeating_attack_'+id+'_attack_ability'].replace(/\+@{|}/g,'')]*1+_.reduce(a.repeatAdds,(memo,adds)=>{return memo + (attributes['repeating_attack_'+id+'_'+adds]*1||0)},0)+(_.reduce(a.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0))+(bonus.attack_total ? (bonus.attack_total.total) : 0));
-            setObj['repeating_attack_'+id+'_attack_dmg_total']=(_.reduce(admg.repeatTextAdds,(memo,adds)=>{
-                if(setObj['repeating_attack_'+id+'_'+adds]){
-                    memo+=setObj['repeating_attack_'+id+'_'+adds]+'+';
-                }else if(attributes['repeating_attack_'+id+'_'+adds]){
-                    memo+=attributes['repeating_attack_'+id+'_'+adds]+'+';
+                    return m;
+                },{buff:0,pen:0,misc:'',armor:0});
+                memo.total+=tObj.buff+tObj.pen;
+                memo.misc+=tObj.misc;
+                memo.armor=starfinderMax(false,memo.armor,tObj.armor);
+                if(tObj.max_dex){
+                    memo.max_dex=starfinderMax(true,memo.max_dex,tObj.max_dex);
                 }
-                return memo},'')+((attributes[(attributes['repeating_attack_'+id+'_attack_dmg_ability']||'').replace(/\+@{|}/g,'')]*1||0)+_.reduce(admg.repeatAdds,(memo,adds)=>{return memo + (attributes['repeating_attack_'+id+'_'+adds]*1||0)},0)+_.reduce(admg.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0))).replace(/\+0/,'');
-            return setObj;
-        },
-        
-        equipmentHandler = function(attributes,bonus,changed,id){
-            var setObj={},
-                itemAttr = ['carried_bulk','wealth'],
-                itemFields = _.filter(_.keys(attributes),(a)=>{return a.match(/repeating_item/)}),
-                iterID,abiObj;
-                
-            _.each(itemAttr,(i)=>{
-                setObj[i]=_.reduce(itemFields,(memo,a)=>{
-                    iterID = a.match(/repeating_item_(-[^_]+)/)[1];
-                    if(a.match(/bulk/)&&i==='carried_bulk'){
-                        if((attributes[a]+'').toLowerCase()==='l'){
-                            memo+=0.1*attributes['repeating_item_'+iterID+'_item_quantity']
-                        }else if(attributes[a]*1){
-                            memo+=(attributes[a]*attributes['repeating_item_'+iterID+'_item_quantity'])||0
-                        }
-                    }else if(a.match(/cost/)&&i==='wealth'){
-                        memo+=(attributes[a]*attributes['repeating_item_'+iterID+'_item_quantity'])||0
-                    }
-                    return memo;
-                },0);
-            });
-            setObj['carried_bulk']=Math.floor(setObj['carried_bulk']);
-            return applyBuffs(attributes,bonus,setObj);
-        },
-        
-        buffHandler = function(attributes,bonus,changed,id){
-            return applyBuffs(attributes,bonus,{});
+                return memo;
+            },{total:0,misc:'',armor:0});
         },
         
         applyBuffs = function(attributes,bonus,setObj){
-            var bTotal,sectionIDs;
+            var bTotal, sectionIDs, repeatFormat, repeatIDs,armbTotal;
             //Ability Score buffing
             _.each(['strength','dexterity','constitution','intelligence','wisdom','charisma'],(abi)=>{
-                bTotal = (bonus[abi] ? (bonus[abi].total) : 0);
+                bTotal = calcBuffs(attributes,bonus[abi],setObj).total;
                 setObj[abi]=(attributes[abi+'_base']*1||10)-(attributes[abi+'_drain']*1||0)+bTotal;
                 setObj[abi+'_mod']=Math.floor((setObj[abi] - 10)/2)-Math.floor((attributes[abi+'_penalty']||0)/2);
                 setObj[abi+'_change']=bTotal > 0 ? 1 : bTotal<0 ? -1 :0;
             });
+            //Encumbrance
+            setObj = _.reduce(_.keys(attributes),(memo,a)=>{
+                let aMatch =a.match(/repeating_item_-[^_]+_item_(bulk|cost)/);
+                if(aMatch){
+                    if(aMatch[1]==='bulk'){
+                        memo.carried_bulk = (memo.carried_bulk||0) + ((attributes[a]+'').match(/l/i) ? 0.1 : attributes[a]*1||0)*attributes[a.replace(/bulk/,'quantity')]||0;
+                    }else{
+                        memo.wealth=(memo.wealth||0) + (attributes[a]*1||0)*attributes[a.replace(/bulk/,'quantity')]||0;
+                    }
+                }
+                return memo;
+            },setObj);
+            setObj.carried_bulk=Math.floor(setObj.carried_bulk)||0;
+            bTotal=calcBuffs(attributes,bonus.encumber_bulk,setObj).total;
+            setObj.encumber_bulk = Math.floor(setObj.strength/2)+bTotal;
+            setObj.encumber_bulk_change=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
+            bTotal=calcBuffs(attributes,bonus.overburden_bulk,setObj).total;
+            setObj.overburden_bulk = setObj.strength+bTotal;
+            setObj.overburden_bulk_change=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
+            setObj.encumber_level = Math.min(Math.floor(setObj.carried_bulk/setObj.encumber_bulk),1)+Math.min(Math.floor(setObj.carried_bulk/setObj.overburden_bulk),1)
             //Health Buffing
             _.each(['sp','hp','rp','temp_hp'],(h)=>{
-                bTotal = (bonus[h] ? bonus[h].total : 0) + (bonus[h+'_max'] ? bonus[h+'_max'].total : 0);
+                bTotal = calcBuffs(attributes,bonus[h],setObj).total;
                 setObj[h+'_max']=(h!=='temp_hp' ? _.reduce([1,2,3,4,5],(memo,n)=>{
                     if(h!=='rp'){
-                        memo += attributes['class-'+n+'-'+h]*attributes['class-'+n+'-level']||0 + (h==='sp' ? attributes.constitution_mod*attributes['class-'+n+'-level']||0 : 0);
+                        memo += attributes['class-'+n+'-'+h]*attributes['class-'+n+'-level']||0 + (h==='sp' ? (setObj.constitution_mod||attributes.constitution_mod)*attributes['class-'+n+'-level']||0 : 0);
+                        if(n===5 && h==='hp'){
+                            memo+=attributes['race_hp']*1||0;
+                        }
                     }else{
-                        memo.push(attributes[attributes['class-'+n+'-ability']]*1||0);
+                        memo.push(setObj[attributes['class-'+n+'-ability']]*1||attributes[attributes['class-'+n+'-ability']]*1||0);
                         if(n===5){
                             memo = _.max(memo);
                         }
@@ -2614,81 +2544,75 @@
                     return memo;
                 },(h==='rp' ? [] : 0)) : 0) + bTotal;
                 if(h==='rp'){
-                    setObj[h+'_max']=Math.max(setObj[h+'_max']+Math.max(Math.floor((attributes.level*1||0)/2),1),1);
+                    setObj[h+'_max']=Math.max(setObj[h+'_max']+Math.max(Math.floor((setObj.level*1||attributes.level*1||0)/2),1),1);
                 }
                 setObj[h]=Math.max(0,(attributes[h]*1||0)+(setObj[h+'_max']-attributes[h+'_max']*1||0));
-                TAS.log(setObj[h]);
                 setObj[h+'_change']= bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
             });
-            //Initiative Buffing
-            bTotal = (bonus.initiative ? bonus.initiative.total : 0);
-            setObj.initiative = attributes[attributes.initiative_ability]*1+bTotal;
-            setObj.initiative_change = bTotal > 0 ? 1 : bTotal < 0 ? -1 : 0;
             //AC buffing
             _.each(['eac','kac'],(ac)=>{
-                bTotal = (bonus[ac] ? (bonus[ac].total) : 0);
-                let armbTotal = (bonus[ac+'_armor'] ? (bonus[ac+'_armor'].total) : 0);
-                setObj[ac+'_armor']=bonus[ac+'_armor'].armor + armbTotal;
+                bonus[ac] = calcBuffs(attributes,bonus[ac],setObj);
+                bonus[ac+'_armor'] = calcBuffs(attributes,bonus[ac+'_armor'],setObj);
+                TAS.log('bonus['+ac+']: '+JSON.stringify(bonus[ac]));
+                bTotal = bonus[ac].total;
+                armbTotal = bonus[ac+'_armor'].total;
+                let maxDex = calcBuffs(attributes,bonus.max_dex,setObj);
+                TAS.log('maxDex: '+JSON.stringify(maxDex));
+                maxDex = bonus[ac].max_dex || bonus[ac].max_dex===0 ? maxDex.total+maxDex.armor+bonus[ac].max_dex : undefined;
+                TAS.log('post maxDex: '+maxDex);
+                setObj[ac+'_armor']=Math.max(bonus[ac+'_armor'].armor,bonus[ac].armor) + armbTotal;
                 setObj[ac+'_armor_change']=armbTotal > 0 ? 1 : (armbTotal < 0 ? -1 : 0);
-                setObj[ac]=10+attributes[attributes[ac+'_ability']]*1+(setObj[ac+'_armor']*1||0)+bTotal;
+                setObj[ac]=10+(_.min([setObj[attributes[ac+'_ability']]*1||0,maxDex]))+(setObj[ac+'_armor']*1||0)+bTotal;
                 setObj[ac+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
             });
-            setObj.cmd=8+setObj.kac+(bonus.cmd ? (bonus.cmd.total) : 0);
-            setObj.cmd_change=(bonus.cmd ? ((bonus.cmd.total) > 0 ? 1 : ((bonus.cmd.total) < 0 ? -1 : 0)) : 0);
-            //Save buffing
-            _.each(['fort','ref','will'],(save)=>{
-                bTotal = (bonus[save] ? (bonus[save].total) : 0);
-                setObj[save]=attributes[attributes[save+'_ability']]*1+attributes[save+'_base']*1+ bTotal;
-                setObj[save+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
-            });
-            //Skill buffing
-            _.each(['acrobatics','athletics','bluff','computers','culture','diplomacy','disguise','engineering','intimidate','life_science','medicine','mysticism',
-            'perception','physical_science','piloting','sense_motive','sleight_of_hand','stealth','survival'],(skill)=>{
-                bTotal = (bonus[skill] ? (bonus[skill].total) : 0)+(skill.match(/acrobatics|athletics|sleight/)&&bonus.acp ? bonus.acp.total : 0);
-                setObj[skill]=(attributes[skill+'_ranks']*1||0)+(attributes[skill+'_ranks']*1 > 0 ? (attributes[skill+'_class_skill']*1||0) : 0)+(attributes[attributes[skill+'_ability']]*1||0)+bTotal;
-                setObj[skill+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
-            });
-            sectionIDs = _.reduce(_.keys(attributes),(memo,k)=>{
-                let id = k.match(/repeating_profession_(-[^_]+)_profession_ranks/);
-                if(id){
-                    memo.push(id[1]);
+            bTotal = calcBuffs(attributes,bonus.cmd,setObj).total;
+            setObj.cmd=8+setObj.kac+bTotal
+            setObj.cmd_change=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
+            //All other buffing
+            _.each(attributeObjs,(obj)=>{
+                bonus[obj.attr]=calcBuffs(attributes,bonus[obj.attr],setObj);
+                bTotal=bonus[obj.attr].total;
+                bTotal += _.reduce(obj.miscBonus,(memo,b)=>{
+                    return memo+calcBuffs(attributes,bonus[b],setObj).total;
+                },0);
+                if(obj.repeating){
+                    repeatFormat = 'repeating_'+obj.repeating+'_';
+                    repeatIDs = _.reduce(_.keys(attributes),(memo,k)=>{
+                        if(k.match(obj.repeating)){
+                            let kMatch = k.match(/_(\-[^_]+_)/);
+                            if(kMatch){
+                                if(!_.contains(memo,kMatch[1])){
+                                    memo.push(kMatch[1]);
+                                }
+                            }
+                        }
+                        return memo;
+                    },[]);
+                    _.each(repeatIDs,(i)=>{
+                        if(obj.attr.match(/attack/)){
+                            setObj[repeatFormat+i+obj.ability+'_value']=(setObj[attributes[repeatFormat+i+obj.ability]]*1||attributes[attributes[repeatFormat+i+obj.ability]]*1||0);
+                        }
+                        setObj[repeatFormat+i+obj.attr+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
+                        setObj[repeatFormat+i+obj.attr]=_.chain([_.reduce(obj.repeatTextAdds,(memo,add)=>{return memo+(setObj[repeatFormat+i+add]||attributes[repeatFormat+i+add]||'')},'')
+                                +_.reduce(obj.textAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]||'')},''),
+                                ((setObj[attributes[repeatFormat+i+obj.ability]]*1||attributes[attributes[repeatFormat+i+obj.ability]]*1||0)+obj.numAdds
+                                +_.reduce(obj.attrAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]*1||0)},0)
+                                +_.reduce(obj.repeatAdds,(memo,add)=>{return memo+(setObj[repeatFormat+i+add]*1||attributes[repeatFormat+i+add]*1||0)},0)+bTotal
+                                +(obj.attr==='attack_total' && attributes[repeatFormat+i+'attack_proficiency']==='no' ? -4 : (obj.attr==='attack_dmg_total' && attributes[repeatFormat+i+'attack_proficiency']==='specialized' ? (attributes[repeatFormat+i+'attack_category'].match(/small arms|operative/i) ? Math.floor((setObj.level||attributes.level)/2) : setObj.level*1||attributes.level*1):0)))])
+                            .reject((v)=>{return !v})
+                            .value().join(' + ');
+                        if(_.isEmpty(setObj[repeatFormat+i+obj.attr])){
+                            setObj[repeatFormat+i+obj.attr] = 0;
+                        }
+                    });
+                }else{
+                    setObj[obj.attr+'_change']=bTotal > 0 ? 1 : (bTotal < 0 ? -1 : 0);
+                    setObj[obj.attr]=(((setObj[attributes[obj.ability]]||attributes[attributes[obj.ability]])*1+obj.numAdds
+                    +_.reduce(obj.attrAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]*1||0)},0)+bTotal)
+                    +_.reduce(obj.textAdds,(memo,add)=>{return memo+(setObj[add]*1||attributes[add]||'')},''));
                 }
-                return memo;
-            },[]);
-            _.each(sectionIDs,(id)=>{
-                bTotal = bonus.profession ? bonus.profession.total : 0;
-                setObj['repeating_profession_'+id+'_profession']=attributes['repeating_profession_'+id+'_profession_ranks']*1||0 + (attributes['repeating_profession_'+id+'_profession_ranks']*1 > 0 ? attributes['repeating_profession_'+id+'_profession_class_skill']*1||0 : 0) + attributes[attributes['repeating_profession_'+id+'_profession_ability'].replace(/\+@{|}/g,'')] + bTotal;
-                setObj['repeating_profession_'+id+'_profession_change']=bTotal > 0 ? 1 : (bTotal <  0 ? -1 : 0);
-                TAS.log(setObj['repeating_profession_'+id+'_profession_change']);
             });
-            //Attack buffing
-            sectionIDs = _.reduce(_.keys(attributes),(memo,k)=>{
-                let id = k.match(/repeating_attack_(-[^_]+)_attack_name/);
-                if(id){
-                    memo.push(id[1]);
-                }
-                return memo;
-            },[]);
-            _.each(sectionIDs,(id)=>{
-                setObj['repeating_attack_'+id+'_attack_misc']=(bonus.attack_total ? '+'+bonus.attack_total.total||'' + bonus.attack_total.misc||'' : '');
-                setObj['repeating_attack_'+id+'_attack_dmg_misc']=bonus.attack_dmg_total ? '+'+bonus.attack_dmg_total.total||'' + bonus.attack_dmg_total.misc||'' : '';
-                setObj['repeating_attack_'+id+'_attack_total']=(attributes[attributes['repeating_attack_'+id+'_attack_ability'].replace(/\+@{|}/g,'')]*1+_.reduce(a.repeatAdds,(memo,adds)=>{return memo + (attributes['repeating_attack_'+id+'_'+adds]*1||0)},0)+(_.reduce(a.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0))+(bonus.attack_total ? (bonus.attack_total.total) : 0));
-                setObj['repeating_attack_'+id+'_attack_total_change']=(bonus.attack_total ? (bonus.attack_total.total > 0 ? 1 : (bonus.attack_total.total < 0 ? -1 : 0)) : 0);
-                setObj['repeating_attack_'+id+'_attack_dmg_total']=(_.reduce(admg.repeatTextAdds,(memo,adds)=>{
-                    if(setObj['repeating_attack_'+id+'_'+adds]){
-                        memo+=setObj['repeating_attack_'+id+'_'+adds]+'+';
-                    }else if(attributes['repeating_attack_'+id+'_'+adds]){
-                        memo+=attributes['repeating_attack_'+id+'_'+adds]+'+';
-                    }
-                    return memo
-                },'')+((attributes[(attributes['repeating_attack_'+id+'_attack_dmg_ability']||'').replace(/\+@{|}/g,'')]*1||0)+_.reduce(admg.repeatAdds,(memo,adds)=>{return memo + (attributes['repeating_attack_'+id+'_'+adds]*1||0)},0)+_.reduce(admg.attrAdds,(memo,adds)=>{return memo + (attributes[adds]*1||0)},0))).replace(/\+0/,'');
-                setObj['repeating_attack_'+id+'_attack_dmg_total_change']=(bonus.attack_dmg_total ? (bonus.attack_dmg_total > 0 ? 1 : (bonus.attack_dmg_total < 0 ? -1 : 0)) : 0); 
-            });
-            //Encumbrance buffing
-            setObj.encumber_bulk=Math.floor(setObj.strength/2);
-            setObj.overburden_bulk=setObj.strength;
-            setObj.encumber_level=(setObj.carried_bulk>(attributes.overburden_bulk*1||10) ? 2 : (setObj.carried_bulk > (attributes.encumber_bulk*1||5) ? 1 : 0));
-            return setObj;
+            setAttrs(setObj,{silent:true});
         },
         
         bootup = function(){
